@@ -56,5 +56,9 @@ if (test) {
 }
 ```
 Output:
-![alt text](img\P1L3)
+![alt text](img\P1L3.PNG)<br>
+
+Dari output tersebut terlihat ada 2 error dimana:
+   * Kode memunculkan error variable test sudah di definisikan sebelumnya atau sudah digunakan.
+   * kedua kondisinya salah karena kode if hanya menerima static boolean, sedangkan dalam kode diatas test merupakan String.<br>
 
