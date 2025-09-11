@@ -94,4 +94,28 @@ jawab: kode akan melanjutkan pencetakan angka hingga kondisi kedua yaitu < 77 <b
 ![alt text](img/P2L3.png)
 
 
+# Praktikum 1
+## Langkah 1
+Ketik atau salin kode program berikut ke dalam fungsi main().
+```dart
+for (Index = 10; index < 27; index) {
+  print(Index);
+}
+```
+jawab: kode banyak mengalami error seperti undifined name Index, lalu ada ketidak konsistenan penggunaan variable pertama menggunakan Index, kedua menggunakan index. <br>
+![alt text](img/P3L1.png)
 
+## Langkah 2
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.<br>
+jawab: kode setelah diperbaiki akan menghasilkan output seperti pada foto dibawah ini
+![alt text](img/P3L2.png)
+
+## Langkah 3
+Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode Anda.
+```dart
+If (Index == 21) break;
+Else If (index > 1 || index < 7) continue;
+print(index);
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue. <br>
+jawab:
