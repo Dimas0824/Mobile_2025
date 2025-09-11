@@ -10,8 +10,13 @@ void main() {
 
   if (test == "test2") print("Test2 again");
 
-  String test = "true";
-  if (test) {
+  // Perbaikan: Gunakan nama variabel berbeda dan pastikan kondisi bertipe bool
+  String testStr = "true";
+  if (testStr == "true") {
     print("Kebenaran");
+  } else {
+    print("Kesalahan");
   }
+
+  if (testStr == "true") print("Kebenaran lagi");
 }

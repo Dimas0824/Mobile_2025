@@ -61,4 +61,6 @@ Output:
 Dari output tersebut terlihat ada 2 error dimana:
    * Kode memunculkan error variable test sudah di definisikan sebelumnya atau sudah digunakan.
    * kedua kondisinya salah karena kode if hanya menerima static boolean, sedangkan dalam kode diatas test merupakan String.<br>
+Dan ini merupakan perbaikan kode: <br>
+![alt text](img/OtpP1L3.png)
 
