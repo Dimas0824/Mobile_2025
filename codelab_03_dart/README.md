@@ -64,3 +64,34 @@ Dari output tersebut terlihat ada 2 error dimana:
 Dan ini merupakan perbaikan kode: <br>
 ![alt text](img/OtpP1L3.png)
 
+# Praktikum 2
+## Langkah 1
+Ketik atau salin kode program berikut ke dalam fungsi main().
+
+```dart
+while (counter < 33) {
+  print(counter);
+  counter++;
+}
+```
+## Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error. <br>
+jawab: kode tersebut menghasilkan error undifined name counter, disebabkan karena variable counter belum ditambahkan ke kode.
+Output setelah perbaikan: <br>
+![alt img](img/P2L1.png)
+## Langkah 3
+Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
+
+```dart
+do {
+  print(counter);
+  counter++;
+} while (counter < 77);
+```
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan do-while.<br>
+jawab: kode akan melanjutkan pencetakan angka hingga kondisi kedua yaitu < 77 <br>
+![alt text](img/P2L3.png)
+
+
+
