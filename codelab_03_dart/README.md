@@ -118,4 +118,5 @@ Else If (index > 1 || index < 7) continue;
 print(index);
 ```
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue. <br>
-jawab:
+jawab: kode tersebut akan menghasilkan error karena Else harus ditulis menggunakan huruf kecil else. 
+![alt text](img/P3L3.png)
