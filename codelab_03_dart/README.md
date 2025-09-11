@@ -120,3 +120,35 @@ print(index);
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue. <br>
 jawab: kode tersebut akan menghasilkan error karena Else harus ditulis menggunakan huruf kecil else. 
 ![alt text](img/P3L3.png)
+
+# Tugas praktikum
+1. Silakan selesaikan Praktikum 1 sampai 3, lalu dokumentasikan berupa screenshot hasil pekerjaan beserta penjelasannya!
+2. Buatlah sebuah program yang dapat menampilkan bilangan prima dari angka 0 sampai 201 menggunakan Dart. Ketika bilangan prima ditemukan, maka tampilkan nama lengkap dan NIM Anda.
+3. Kumpulkan berupa link commit repo GitHub pada tautan yang telah disediakan di grup Telegram!
+
+```dart
+void main() {
+  String nama = "Muhammad Irsyad Dimas Abdillah";
+  String nim = "2341720088";
+
+  print("Bilangan Prima dari 0 sampai 201:");
+
+  for (int number = 2; number <= 201; number++) {
+    bool isPrime = true;
+
+    // cek apakah number prima
+    for (int i = 2; i * i <= number; i++) {
+      if (number % i == 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    // jika prima, cetak beserta nama dan NIM
+    if (isPrime) {
+      print("$number - $nama - $nim");
+    }
+  }
+}
+```
+Output kode: ![alt text](img/Tugas.png)
