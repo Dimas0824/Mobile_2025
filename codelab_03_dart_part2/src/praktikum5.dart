@@ -12,6 +12,13 @@ void main() {
   //akses masing masing field
   print(mahasiswa.$1);
   print(mahasiswa.$2);
+
+  var mahasiswa2 = ('Irsyad', a: 2341720088, b: true, 'Informatika');
+
+  print(mahasiswa2.$1); // Prints 'Irsyad'
+  print(mahasiswa2.a); // Prints 2341720088
+  print(mahasiswa2.b); // Prints true
+  print(mahasiswa2.$2); // Prints 'Informatika'
 }
 
 (int, int) tukar((int, int) record) {
