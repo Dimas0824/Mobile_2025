@@ -15,11 +15,14 @@ void main() {
   print(listNim);
 
   //Langkah 4: Conditional Element
-  var promoActive = true;
+  // Kasus promoActive = true
+  printNav(true);
+
+  // Kasus promoActive = false
+  printNav(false);
+}
+
+void printNav(bool promoActive) {
   var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
   print(nav);
-
-  promoActive = false;
-  var nav2 = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
-  print(nav2);
 }
