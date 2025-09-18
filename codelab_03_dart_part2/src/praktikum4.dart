@@ -42,6 +42,12 @@ void main() {
       'Dashboard',
   ];
   print(nav3);
+
+  //Langkah 6: Collection for element
+  var listOfInts = [1, 2, 3];
+  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  assert(listOfStrings[1] == '#1');
+  print(listOfStrings);
 }
 
 void printNav(bool promoActive) {

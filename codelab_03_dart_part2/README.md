@@ -327,8 +327,78 @@ Kode diatas menunjukkan bahwa jika kondisi login == manager maka akan menambahka
 ![alt text](img/P4L5.png)
 
 ## Langkah 6:
+```dart
+void main() {
+  var list1 = [1, 2, 3];
+  print(list1);
 
+  // List bisa menampung null kalau tipenya nullable
+  List<int?> list1b = [1, 2, null];
+  print(list1b);
+
+  var list3 = [0, ...?list1b];
+  print(list3.length);
+
+  // Tambahkan variabel list berisi NIM
+  var nim = ['2', '1', '4', '1', '7', '2', '0', '0', '8', '8'];
+  var listNim = [...nim];
+  print(listNim);
+
+  //Langkah 4: Conditional Element
+  // Kasus promoActive = true
+  printNav(true);
+
+  // Kasus promoActive = false
+  printNav(false);
+
+  //Langkah 5: Case element
+  var login = 'Manager';
+  var nav2 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager') 'Inventory',
+  ];
+  print(nav2);
+
+  login = 'Admin';
+  var nav3 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager')
+      'Inventory'
+    else if (login case 'Admin')
+      'Dashboard',
+  ];
+  print(nav3);
+
+  //Langkah 6: Collection for element
+  var listOfInts = [1, 2, 3];
+  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  assert(listOfStrings[1] == '#1');
+  print(listOfStrings);
+}
+
+void printNav(bool promoActive) {
+  var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+  print(nav);
+}
+```
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Jelaskan manfaat Collection For dan dokumentasikan hasilnya.
 
-jawab:
+jawab: dalam kode tersebut Collection-for memungkinkan loop langsung di dalam list. Manfaatnya agar membuat list lebih ringkas dan deklaratif tanpa perlu for terpisah. <br>
+![alt text](img/P4L6.png)
+
+# Praktikum 5: Eksperimen Tipe Data Records
+
+## Langkah 1:
+
+## Langkah 2:
+
+## Langkah 3:
+
+## Langkah 4:
+
+## Langkah 5:
