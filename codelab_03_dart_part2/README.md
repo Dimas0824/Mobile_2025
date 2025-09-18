@@ -106,10 +106,32 @@ dan terakhir names3 dihapus karena bukan set melainkan sebuah map kosong.
 # Praktikum 3: Eksperimen Tipe Data Maps
 
 ## Langkah 1:
+```dart
+void main() {
+  var gifts = {
+    // Key:    Value
+    'first': 'partridge',
+    'second': 'turtledoves',
+    'fifth': 1,
+  };
 
+  var nobleGases = {2: 'helium', 10: 'neon', 18: 2};
+
+  print(gifts);
+  print(nobleGases);
+}
+
+```
 ## Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+
+jawab: kode tidak mengalami error. Kode mendeklarasikan sebuah map di Dart dengan menyimpan data dalam bentuk pasangan antara key dan valuenya. Pada noblegases key berupa int dan valuenya string.
+![alt text](img/P3L2.png)
 
 ## Langkah 3:
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+
+Tambahkan elemen nama dan NIM Anda pada tiap variabel di atas (gifts, nobleGases, mhs1, dan mhs2). Dokumentasikan hasilnya dan buat laporannya!
 
 # Praktikum 4: Eksperimen Tipe Data List: Spread dan Control-flow Operators
 
