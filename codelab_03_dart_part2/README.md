@@ -260,12 +260,14 @@ Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentas
 jawab: 
 ![alt text](img/P4L3.png)
 ## Langkah 4:
-
+![alt text](img/CodeP4L4.png)
 
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel promoActive ketika true dan false.
 
-jawab:
+jawab: kode memunculkan peringatan dead code pada baris var nav2. Peringatan muncul karena Dart analyzer menganggap baris nav2 tidak akan pernah dijalankan (dead code), biasanya karena variabel sudah di-assign konstan sebelumnya. Perbaikannya:
+```dart
+
 
 ## Langkah 5:
 

@@ -13,4 +13,13 @@ void main() {
   var nim = ['2', '1', '4', '1', '7', '2', '0', '0', '8', '8'];
   var listNim = [...nim];
   print(listNim);
+
+  //Langkah 4: Conditional Element
+  var promoActive = true;
+  var nav = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+  print(nav);
+
+  promoActive = false;
+  var nav2 = ['Home', 'Furniture', 'Plants', if (promoActive) 'Outlet'];
+  print(nav2);
 }
