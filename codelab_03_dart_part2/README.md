@@ -407,13 +407,29 @@ Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jela
 jawab: variable record adalah Record dengan positional fields ('first', 'last') dan named fields (a: 2, b: true). Output berupa tuple-like object.
 
 ## Langkah 3:
+```dart
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
 
-jawab:
+  var hasil = tukar((10, 20));
+  print(hasil);
+}
+
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Gunakan fungsi tukar() di dalam main() sehingga tampak jelas proses pertukaran value field di dalam Records.
+![alt text](img/P5L3.png)
+jawab: kode tidak error, tatapi function yang telah dibuat di luar main tidak terpanggil di main karena memang belum dipanggil dan digunakan. setelah perbaikan output akan seperti pada gambar diatas.
 
 ## Langkah 4:
-
-
+![alt text](img/CodeP5L4.png)
+Kode menghasilkan error Non-nullable variable 'mahasiswa' must be assigned before it can be used. Hal itu bisa terjadi karena variable mahasiswa belum diinisialisasi ketika dipanggil print(mahasiswa).
 jawab:
+![alt text](img/P5L4.png)
 
 ## Langkah 5:
 
