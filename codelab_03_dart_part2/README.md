@@ -131,7 +131,49 @@ jawab: kode tidak mengalami error. Kode mendeklarasikan sebuah map di Dart denga
 ## Langkah 3:
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
 
+```dart
+void main() {
+  var gifts = {
+    // Key:    Value
+    'first': 'partridge',
+    'second': 'turtledoves',
+    'fifth': 1,
+  };
+
+  var nobleGases = {2: 'helium', 10: 'neon', 18: 2};
+
+  var mhs1 = Map<String, String>(); //map kosong
+  gifts['first'] = 'partridge';
+  gifts['second'] = 'turtledoves';
+  gifts['fifth'] = 'golden rings';
+  gifts['nama'] = 'Muhammad Irsyad Dimas Abdillah';
+  gifts['nim'] = '2341720088';
+
+  var mhs2 = Map<int, String>(); //map kosong
+  nobleGases[2] = 'helium';
+  nobleGases[10] = 'neon';
+  nobleGases[18] = 'argon';
+  nobleGases[20] = 'Muhammad Irsyad Dimas Abdillah';
+  nobleGases[21] = '2341720088';
+
+  //asign map mhs1
+  mhs1['nama'] = 'Muhammad Irsyad Dimas Abdillah';
+  mhs1['nim'] = '2341720088';
+
+  //asign map mhs2
+  mhs2[20] = 'Muhammad Irsyad Dimas Abdillah';
+  mhs2[21] = '2341720088';
+
+  print(gifts);
+  print(nobleGases);
+  print(mhs1);
+  print(mhs2);
+}
+```
 Tambahkan elemen nama dan NIM Anda pada tiap variabel di atas (gifts, nobleGases, mhs1, dan mhs2). Dokumentasikan hasilnya dan buat laporannya!
+
+jawab: dalam kode tersebut tidak ada error sama sekali, mungkin sebelum value dari map mhs1 dan 2 di berikan akan ada peringatan bahwa variable tersebut tidak digunakan, tapi itu bukan error melaikan sebuah peringatan yang dapat masih di run dengan normal.
+![alt text](img/P3L3.png)
 
 # Praktikum 4: Eksperimen Tipe Data List: Spread dan Control-flow Operators
 
