@@ -178,13 +178,62 @@ jawab: dalam kode tersebut tidak ada error sama sekali, mungkin sebelum value da
 # Praktikum 4: Eksperimen Tipe Data List: Spread dan Control-flow Operators
 
 ## Langkah 1:
+Sebelum diperbaiki (kesalahan deklarasi variable):
+```dart
+void main() {
+  var list = [1, 2, 3];
+  var list2 = [0, ...list];
+  print(list1);
+  print(list2);
+  print(list2.length);
+}
+
+```
+Setelah Diperbaiki
+```dart
+void main() {
+  var list1 = [1, 2, 3];
+  var list2 = [0, ...list1];
+  print(list1);
+  print(list2);
+  print(list2.length);
+}
+```
 
 ## Langkah 2:
-
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+Fixed
+![alt text](img/P4L2.png)
+jawab: pada kode operator ... digunakan untuk memecah elemen list lain ke dalam list baru. lists2 = [0, ...list1] artinya isi list1 disisipkan setelah 0. Awalnya ada error karena di soal tertulis list, padahal variabelnya list1. Setelah diperbaiki, berjalan normal.
 ## Langkah 3:
+
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
+
+jawab: 
+
+Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
+
+jawab: 
 
 ## Langkah 4:
 
+
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel promoActive ketika true dan false.
+
+jawab:
+
 ## Langkah 5:
 
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel login mempunyai kondisi lain.
+
+jawab:
+
 ## Langkah 6:
+
+
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Jelaskan manfaat Collection For dan dokumentasikan hasilnya.
+
+jawab:
