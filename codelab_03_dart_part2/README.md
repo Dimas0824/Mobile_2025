@@ -206,11 +206,38 @@ Fixed
 ![alt text](img/P4L2.png)
 jawab: pada kode operator ... digunakan untuk memecah elemen list lain ke dalam list baru. lists2 = [0, ...list1] artinya isi list1 disisipkan setelah 0. Awalnya ada error karena di soal tertulis list, padahal variabelnya list1. Setelah diperbaiki, berjalan normal.
 ## Langkah 3:
+```dart
+void main() {
+  var list1 = [1, 2, 3];
+  var list2 = [0, ...list1];
+  print(list1);
+  print(list2);
+  print(list2.length);
 
+  list1 = [1, 2, null];
+  print(list1);
+  var list3 = [0, ...?list1];
+  print(list3.length);
+}
+```
+output:
+```dart
+Connecting to VM Service at ws://127.0.0.1:57155/qjgzHYVlzdY=/ws
+Connected to the VM Service.
+codelab_03_dart_part2/src/praktikum4.dart:8:18: Error: A value of type 'Null' can't be assigned to a variable of type 'int'.
+praktikum4.dart:8
+  list1 = [1, 2, null];
+                 ^
+
+Exited (254).
+```
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
 
-jawab: 
+jawab: kode diatas menunjukkan error bahwa value bertipe Null tidak dapat di masukkan ke variable bertipe int. Perbaikan harus dilakukan dengan memberikan typeNull safety pada variable list1:
+
+```dart
+
 
 Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
 
