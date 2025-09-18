@@ -298,11 +298,33 @@ void printNav(bool promoActive) {
 ```
 
 ## Langkah 5:
-
+![alt text](img/CodeP4L5.png)
 
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki. Tunjukkan hasilnya jika variabel login mempunyai kondisi lain.
 
-jawab:
+jawab: kode diatas error karena kode belum mendeklarasikan login, perbaikan:
+```dart
+  //Langkah 5: Case element
+  var login = 'Manager';
+  var nav2 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager') 'Inventory',
+  ];
+  print(nav2);
+
+  login = 'Admin';
+  var nav3 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager') 'Inventory' else if (login case 'Admin') 'Dashboard',
+  ];
+  print(nav3);
+```
+Kode diatas menunjukkan bahwa jika kondisi login == manager maka akan menambahkan elemen Inventory, namun jika login == admin maka akan menambahkan Dashboard namun tidak menambahkan Inventory.
+![alt text](img/P4L5.png)
 
 ## Langkah 6:
 

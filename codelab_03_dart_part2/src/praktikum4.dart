@@ -20,6 +20,28 @@ void main() {
 
   // Kasus promoActive = false
   printNav(false);
+
+  //Langkah 5: Case element
+  var login = 'Manager';
+  var nav2 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager') 'Inventory',
+  ];
+  print(nav2);
+
+  login = 'Admin';
+  var nav3 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'Manager')
+      'Inventory'
+    else if (login case 'Admin')
+      'Dashboard',
+  ];
+  print(nav3);
 }
 
 void printNav(bool promoActive) {
