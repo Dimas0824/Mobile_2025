@@ -57,3 +57,70 @@ void main() {
 ```
 Sehingga outputnya seperti berikut ini:
 ![alt text](img/P1L3Fixed.png)
+
+# Praktikum 2: Eksperimen Tipe Data Set
+
+## Langkah 1:
+```dart
+void main() {
+  var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+  print(halogens);
+}
+```
+## Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.<br>
+jawab: Tidak ada error yang terjadi, kode tersebut mendeklarasikan sebuah set bernama halogens berisikan 5 unsur halogen, kemudian kode melakukan print set tersebut. Set di Dart adalah kumpulan data yang tidak berurutan dan tidak memiliki elemen duplikat.
+![alt text](img/P2L2.png)
+## Langkah 3:
+```dart
+void main() {
+  var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+  print(halogens);
+
+  var names1 = <String>{};
+  Set<String> names2 = {}; // This works, too.
+  var names3 = {}; // Creates a map, not a set.
+
+  print(names1);
+  print(names2);
+  print(names3);
+
+  // Tambahkan elemen nama dan nim ke dalam set
+  names1.add('Muhammad Irsyad Dimas Abdillah');
+  names2.add('2341720088');
+
+  // Tambahkan elemen dengan method addAll()
+  names1.addAll({'Muhammad Irsyad Dimas Abdillah', '2341720088'});
+
+  print(names1);
+  print(names2);
+}
+```
+Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan ketiga variabel tersebut. Tambahkan elemen nama dan NIM Anda pada kedua variabel Set tersebut dengan dua fungsi berbeda yaitu .add() dan .addAll(). Untuk variabel Map dihapus, nanti kita coba di praktikum selanjutnya.
+
+jawab: kode tersebut membuat set, dan maps dan melakukan add elemen kedalam set tersebut melalui metode .add atau bisa menambahkan banyak elemen melalui metode .addAll.
+dan terakhir names3 dihapus karena bukan set melainkan sebuah map kosong.
+
+![alt text](img/P2L3.png)
+
+# Praktikum 3: Eksperimen Tipe Data Maps
+
+## Langkah 1:
+
+## Langkah 2:
+
+## Langkah 3:
+
+# Praktikum 4: Eksperimen Tipe Data List: Spread dan Control-flow Operators
+
+## Langkah 1:
+
+## Langkah 2:
+
+## Langkah 3:
+
+## Langkah 4:
+
+## Langkah 5:
+
+## Langkah 6:
