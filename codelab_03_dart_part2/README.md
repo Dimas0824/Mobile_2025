@@ -394,11 +394,27 @@ jawab: dalam kode tersebut Collection-for memungkinkan loop langsung di dalam li
 # Praktikum 5: Eksperimen Tipe Data Records
 
 ## Langkah 1:
+```dart
+void main() {
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
+}
+```
 
 ## Langkah 2:
+Silakan coba eksekusi (Run) kode pada langkah 1 tersebut. Apa yang terjadi? Jelaskan! Lalu perbaiki jika terjadi error.
+![alt text](img/P5L2.png)
+jawab: variable record adalah Record dengan positional fields ('first', 'last') dan named fields (a: 2, b: true). Output berupa tuple-like object.
 
 ## Langkah 3:
 
+jawab:
+
 ## Langkah 4:
 
+
+jawab:
+
 ## Langkah 5:
+
+jawab:
