@@ -47,7 +47,7 @@ jawab: Kode menunjukkan error bahwa a value of type string can't be assigned to 
 Perbaikan dapat dilakukan dengan mengganti kode list menggunakan List<dynamic> untuk dinamis tipe data, atau List<string> hanya untuk menerima tipe data string. <br>
 ```dart
 void main() {
-  final list = List<string>.filled(5, null, growable: false);
+  final list = List<string>.filled(5, '', growable: false);
 
   list[1] = "Muhammad Irsyad Dimas Abdillah";
   list[2] = "2341720088";
@@ -55,3 +55,5 @@ void main() {
   print(list);
 }
 ```
+Sehingga outputnya seperti berikut ini:
+![alt text](img/P1L3Fixed.png)

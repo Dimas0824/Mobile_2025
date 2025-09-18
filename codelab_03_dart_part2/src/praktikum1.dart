@@ -9,7 +9,7 @@ void main() {
   // assert(list[1] == 1);
   // print(list[1]);
 
-  final list = List.filled(5, null, growable: false);
+  final list = List<String>.filled(5, '', growable: false);
 
   list[1] = "Muhammad Irsyad Dimas Abdillah";
   list[2] = "2341720088";
