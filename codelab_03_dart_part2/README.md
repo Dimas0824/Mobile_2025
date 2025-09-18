@@ -237,12 +237,28 @@ Apa yang terjadi ? Jika terjadi error, silakan perbaiki.
 jawab: kode diatas menunjukkan error bahwa value bertipe Null tidak dapat di masukkan ke variable bertipe int. Perbaikan harus dilakukan dengan memberikan typeNull safety pada variable list1:
 
 ```dart
+void main() {
+  var list1 = [1, 2, 3];
+  print(list1);
 
+  // List bisa menampung null kalau tipenya nullable
+  List<int?> list1b = [1, 2, null];
+  print(list1b);
+
+  var list3 = [0, ...?list1b];
+  print(list3.length);
+
+  // Tambahkan variabel list berisi NIM
+  var nim = ['2', '1', '4', '1', '7', '2', '0', '0', '8', '8'];
+  var listNim = [...nim];
+  print(listNim);
+}
+```
 
 Tambahkan variabel list berisi NIM Anda menggunakan Spread Operators. Dokumentasikan hasilnya dan buat laporannya!
 
 jawab: 
-
+![alt text](img/P4L3.png)
 ## Langkah 4:
 
 
