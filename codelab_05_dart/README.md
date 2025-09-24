@@ -284,6 +284,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 }
 ```
+![alt text](img/p5l3.png)
 
 ### Langkah 4: Dialog Widget
 
@@ -345,6 +346,7 @@ showAlertDialog(BuildContext context) {
 }
 ```
 
+
 ### Langkah 5: Input dan Selection Widget
 
 Flutter menyediakan widget yang dapat menerima input dari pengguna aplikasi seperti Checkbox, Date and Time Pickers, Radio Button, Slider, Switch, TextField.
@@ -372,6 +374,7 @@ class MyApp extends StatelessWidget {
     }
 }
 ```
+
 
 ### Langkah 6: Date and Time Pickers
 
@@ -448,4 +451,5 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 }
 ```
+
 
