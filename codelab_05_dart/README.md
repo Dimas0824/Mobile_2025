@@ -61,52 +61,101 @@ Pastikan muncul pesan "Your Flutter Project is ready!" menandakan project berhas
 
 Melanjutkan dari praktikum 1, jalankan aplikasi ke perangkat fisik (Android/iOS) sesuai langkah pada codelab terkait.
 
+### Langkah 1
+
+Mengaktifkan USB debugging di HP
+
+![alt text](img/p2l1.jpg)
+
+### Langkah 2
+
+Download USB Driver untuk debugging
+
+![alt text](img/p2l2.png)
+
+### Langkah 3
+
+Cek apakah HP sudah terkoneksi di Android Studio. Untuk case saya terlihat HP dengan registrasi nama: Xiaomi 21061110AG, Android 13 (Tiramisu) sudah terkoneksi. 
+
+![alt text](img/p2l3.png)
+
 ---
 
 ## Praktikum 3: Membuat Repository GitHub dan Laporan Praktikum
-
-### Langkah 1
-Login ke GitHub, buat repository baru bernama `flutter-fundamental-part1`.
-
-### Langkah 2
-Klik **Create repository**.
-
-### Langkah 3
-Buka VS Code pada project `hello_world`, buka terminal (**Terminal > New Terminal**) dan jalankan:
-```bash
-git init
-```
-
-### Langkah 4
-Pilih menu **Source Control**, lakukan stage (+) pada file `.gitignore`.
-
-### Langkah 5
-Commit dengan pesan "tambah gitignore", lalu klik **Commit** (✔).
-
-### Langkah 6
-Push dengan klik menu titik tiga > **Push**.
-
-### Langkah 7
-Klik **Add Remote** pada notifikasi di pojok kanan bawah.
-
-### Langkah 8
-Salin tautan repository dari browser, klik **Add remote**, beri nama `origin`.
-
-### Langkah 9
-Stage dan push file `README.md`. Masukkan username dan personal access token GitHub saat push. Reload halaman repository untuk melihat hasil.
-
-> **Perhatian:** Personal access token dapat dibuat di [GitHub Token Settings](https://github.com/settings/tokens/new).
-
-### Langkah 10
-Push semua file lain dengan **Stage All Changes**. Commit dengan pesan "project hello_world" dan push ke repository.
+> **Asumsi** bahwa sudah memiliki akun dan repositori github:
 
 ### Langkah 11
 Di VS Code, ubah platform ke emulator/device atau browser Chrome. Jalankan project dengan <kbd>F5</kbd> atau **Run > Start Debugging**.
+![alt text](img/p3l11.png)
 
 > **Catatan:** Kompilasi pertama kali memakan waktu 3-5 menit, selanjutnya lebih cepat.
 
 ### Langkah 12
 Screenshot aplikasi pada Langkah 11 dengan nama lengkap Anda. Simpan screenshot sebagai `01.png` di folder `images` (buat folder jika belum ada). Ubah isi `README.md` untuk menampilkan screenshot, lalu push ke repository.
+![alt text](img/p3l12.png)
 
 > **Perhatian:** Lakukan screenshot seperti Langkah 12 untuk setiap laporan praktikum berikutnya hingga project final.
+
+## Praktikum 4: Menerapkan Widget Dasar
+
+### Langkah 1: Text Widget
+
+Buat folder baru `basic_widgets` di dalam folder `lib`. Kemudian buat file baru di dalam `basic_widgets` dengan nama `text_widget.dart`. Salin kode berikut ke file tersebut, dan ganti teks "Fulan" dengan nama lengkap Anda:
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyTextWidget extends StatelessWidget {
+    const MyTextWidget({Key? key}) : super(key: key);
+
+    @override
+    Widget build(BuildContext context) {
+        return const Text(
+            "Nama saya Muhammad Irsyad Dimas Abdillah, sedang belajar Pemrograman Mobile",
+            style: TextStyle(color: Colors.red, fontSize: 14),
+            textAlign: TextAlign.center,
+        );
+    }
+}
+```
+![alt text](img/p4l1.1.png)
+
+Import file `text_widget.dart` ke `main.dart`, lalu ganti bagian text widget dengan kode di atas. Hasilnya akan seperti gambar berikut:
+
+![alt text](img/p4l1l2.png)
+
+---
+
+### Langkah 2: Image Widget
+
+Buat file baru `image_widget.dart` di dalam folder `basic_widgets` dengan isi kode berikut:
+
+```dart
+import 'package:flutter/material.dart';
+
+class MyImageWidget extends StatelessWidget {
+    const MyImageWidget({Key? key}) : super(key: key);
+
+    @override
+    Widget build(BuildContext context) {
+        return const Image(
+            image: AssetImage("logo_polinema.jpg"),
+        );
+    }
+}
+```
+
+Tambahkan file logo Anda (`logo_polinema.jpg`) ke folder `assets` di project `hello_world`. Sesuaikan pengaturan asset pada file `pubspec.yaml`:
+
+```yaml
+flutter:
+    assets:
+        - logo_polinema.jpg
+```
+
+Import dan gunakan widget ini di `main.dart`. Hasilnya akan tampil seperti gambar berikut:
+
+![Screenshot Image Widget](images/03.png)
+
+
 
