@@ -203,6 +203,7 @@ return MaterialApp(
     ),
 );
 ```
+![alt text](img/p5l2.png)
 
 ### Langkah 3: Scaffold Widget
 
