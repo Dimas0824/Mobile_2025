@@ -122,7 +122,7 @@ class MyTextWidget extends StatelessWidget {
 
 Import file `text_widget.dart` ke `main.dart`, lalu ganti bagian text widget dengan kode di atas. Hasilnya akan seperti gambar berikut:
 
-![alt text](img/p4l1l2.png)
+![alt text](img/p4l1.2.png)
 
 ---
 
@@ -144,6 +144,7 @@ class MyImageWidget extends StatelessWidget {
     }
 }
 ```
+![alt text](img/p4l2.1.png)
 
 Tambahkan file logo Anda (`logo_polinema.jpg`) ke folder `assets` di project `hello_world`. Sesuaikan pengaturan asset pada file `pubspec.yaml`:
 
@@ -152,10 +153,10 @@ flutter:
     assets:
         - logo_polinema.jpg
 ```
+![alt text](img/p4l2.2.png)
 
 Import dan gunakan widget ini di `main.dart`. Hasilnya akan tampil seperti gambar berikut:
 
-![Screenshot Image Widget](images/03.png)
-
+![alt text](img/p4l2.3.png)
 
 
