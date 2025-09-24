@@ -8,7 +8,7 @@
 
 <br>
 
-<table align="center">![alt text](image.png)
+<table align="center">
     <tr>
         <td><strong>Nama</strong></td>
         <td>: Muhammad Irsyad Dimas Abdillah</td>
