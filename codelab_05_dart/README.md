@@ -79,6 +79,12 @@ Cek apakah HP sudah terkoneksi di Android Studio. Untuk case saya terlihat HP de
 
 ![alt text](img/p2l3.png)
 
+### Langkah 4
+
+Output dan test run debugging ke HP yang terkoneksi
+![alt text](img/p2l4.1.jpg)
+![alt text](img/p2l4.2.jpg)
+
 ---
 
 ## Praktikum 3: Membuat Repository GitHub dan Laporan Praktikum
