@@ -459,3 +459,20 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 ![alt text](img/p5l6.png)
 
+## CODELAB : Membuat Aplikasi Flutter Sederhana
+### Langkah 1:
+![alt text](img/codelab1.gif)
+
+### Langkah 2:
+Daripada hanya menampilkan satu nama acak, mari kita tambahkan tombol "Next" yang menampilkan nama acak baru setiap kali ditekan. Untuk melakukan ini, kita perlu mengubah `MyAppState` menjadi `StatefulWidget` sehingga kita dapat menyimpan status nama saat ini dan memperbaruinya saat tombol ditekan.
+![alt text](img/codelab2.gif)
+
+### Langkah 3:
+Memperindah tampilan aplikasi dengan menambahkan beberapa gaya dan tata letak. Kita akan menambahkan beberapa padding di sekitar teks dan tombol, dan memberikan card background pada teks nama.
+![alt text](img/codelab3.png)
+
+### Langkah 4:
+Menambahkan fungsi untuk menyimpan nama favorit. Kita akan menambahkan ikon hati di sebelah tombol "Next" yang dapat ditekan untuk menyimpan nama saat ini ke daftar favorit.
+![alt text](img/codelab4.gif)
+
+### Langkah 5:
