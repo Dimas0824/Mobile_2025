@@ -476,3 +476,10 @@ Menambahkan fungsi untuk menyimpan nama favorit. Kita akan menambahkan ikon hati
 ![alt text](img/codelab4.gif)
 
 ### Langkah 5:
+Aplikasi Anda kini mampu menyesuaikan diri dengan berbagai kondisi lingkungan, seperti ukuran layar, orientasi perangkat, dan platform yang digunakan. Dengan demikian, aplikasi Anda sudah bersifat responsif.
+![alt text](img/codelab5.gif)
+
+### Langkah 6:
+Tambahkan halaman baru untuk menampilkan daftar nama favorit yang telah disimpan dengan membuat widget stateless FavoritesPage, lalu tampilkan daftar favorit menggunakan ListView di widget tersebut.
+![alt text](img/codelab6.gif)
+
