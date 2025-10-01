@@ -397,3 +397,11 @@ class MyApp extends StatelessWidget {
 ### Screenshot:
 ![alt text](img/p4.png)
 
+## TUGAS
+
+### Output:
+Menampilkan text "Hello, World!" di tengah layar menggunakan widget Center dan Text.
+![alt text](img/t1.png)
+
+Menampilkann 3 gambar dengan row dan column allignment
+![alt text](img/t2.png)
