@@ -415,3 +415,162 @@ Flex pada gambar agar gambar menyesuaikan ruang yang ada
 Menambahkan ikon bintang di bawah gambar
 ![alt text](img/t5.png)
 ![alt text](img/t6.png)
+
+Menambahkan gambar pavlova.png
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const descTextStyle = TextStyle(
+      color: Colors.black,
+      fontWeight: FontWeight.w800,
+      fontFamily: 'Roboto',
+      letterSpacing: 0.5,
+      fontSize: 18,
+      height: 2,
+    );
+
+    // Title text
+    final titleText = Container(
+      padding: const EdgeInsets.all(20),
+      child: const Text(
+        'Strawberry Pavlova',
+        style: TextStyle(
+          fontSize: 32,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        textAlign: TextAlign.center,
+      ),
+    );
+
+    // Subtitle text
+    final subTitle = const Text(
+      'Pavlova is a meringue-based dessert named after the Russian ballerina '
+      'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
+      'topped with fruit and whipped cream.',
+      textAlign: TextAlign.center,
+      style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.5),
+    );
+
+    // Rating stars row
+    final stars = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        const Icon(Icons.star, color: Colors.black),
+        const Icon(Icons.star, color: Colors.black),
+      ],
+    );
+
+    final ratings = Container(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          stars,
+          const Text(
+            '170 Reviews',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Roboto',
+              letterSpacing: 0.5,
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    // Icon list with 3 columns structure
+    final iconList = DefaultTextStyle.merge(
+      style: descTextStyle,
+      child: Container(
+        padding: const EdgeInsets.all(20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Column(
+              children: [
+                Icon(Icons.kitchen, color: Colors.green[500]),
+                const Text('PREP:'),
+                const Text('25 min'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(Icons.timer, color: Colors.green[500]),
+                const Text('COOK:'),
+                const Text('1 hr'),
+              ],
+            ),
+            Column(
+              children: [
+                Icon(Icons.restaurant, color: Colors.green[500]),
+                const Text('FEEDS:'),
+                const Text('4-6'),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+
+    // Left column content
+    final leftColumn = Container(
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [titleText, subTitle, ratings, iconList],
+      ),
+    );
+
+    // Main image
+    final mainImage = Image.asset('img/pavlova.png', fit: BoxFit.cover);
+
+    return MaterialApp(
+      title: 'Flutter Recipe Card',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: const Text('Recipe Card Demo'),
+          backgroundColor: Colors.green[500],
+        ),
+        body: Center(
+          child: Container(
+            margin: const EdgeInsets.fromLTRB(0, 40, 0, 30),
+            height: 600,
+            child: Card(
+              elevation: 4,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(width: 440, child: leftColumn),
+                  Expanded(child: mainImage),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+```
+![alt text](img/t7.png)
+
+Membuat gridview, dan listview
+![alt text](img/t8.gif)
+
