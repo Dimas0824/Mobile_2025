@@ -405,3 +405,9 @@ Menampilkan text "Hello, World!" di tengah layar menggunakan widget Center dan T
 
 Menampilkann 3 gambar dengan row dan column allignment
 ![alt text](img/t2.png)
+
+Menambahkan pada image asset untuk ukuran gambar menggunakan Expanded
+![alt text](img/t3.png)
+
+Flex pada gambar agar gambar menyesuaikan ruang yang ada
+![alt text](img/t4.png)

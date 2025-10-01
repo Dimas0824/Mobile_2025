@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Expanded(child: Image.asset('img/lake.png')),
-                  Expanded(child: Image.asset('img/KolamBB.png')),
+                  Expanded(flex: 2, child: Image.asset('img/KolamBB.png')),
                   Expanded(child: Image.asset('img/mountain.png')),
                 ],
               ),
