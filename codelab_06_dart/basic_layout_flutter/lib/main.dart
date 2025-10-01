@@ -70,21 +70,37 @@ class MyApp extends StatelessWidget {
   Widget _buildList() {
     return ListView(
       children: [
-        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
-        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
         _tile(
-          'United Artists Stonestown Twin',
-          '501 Buckingham Way',
+          'Bioskop XXI Plaza Indonesia',
+          'Jl. M.H. Thamrin No.28-30',
           Icons.theaters,
         ),
-        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+        _tile('CGV Grand Indonesia', 'Jl. M.H. Thamrin No.1', Icons.theaters),
+        _tile(
+          'Bioskop XXI Kota Kasablanka',
+          'Jl. Casablanca Raya Kav.88',
+          Icons.theaters,
+        ),
+        _tile('Bioskop XXI Blok M Plaza', 'Jl. Bulungan No.76', Icons.theaters),
+        _tile(
+          'CGV FX Sudirman',
+          'Jl. Jend. Sudirman Pintu Satu Senayan',
+          Icons.theaters,
+        ),
+        _tile(
+          'Bioskop XXI Gandaria City',
+          'Jl. Sultan Iskandar Muda',
+          Icons.theaters,
+        ),
         const Divider(),
-        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
-        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-        _tile('Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
-        _tile('La Ciccia', '291 30th St', Icons.restaurant),
+        _tile(
+          'Restoran Sederhana',
+          'Jl. Bendungan Hilir No.29',
+          Icons.restaurant,
+        ),
+        _tile('Bebek Kaleyo', 'Jl. Cikini Raya No.70', Icons.restaurant),
+        _tile('Warung Bu Kris', 'Jl. Panjang No.5', Icons.restaurant),
+        _tile('Bakmi GM', 'Jl. Gajah Mada No.123', Icons.restaurant),
       ],
     );
   }
@@ -98,6 +114,120 @@ class MyApp extends StatelessWidget {
       ),
       subtitle: Text(subtitle),
       leading: Icon(icon, color: Colors.blue[500]),
+    );
+  }
+
+  // Build Stack with circular avatar and label
+  Widget _buildStack() {
+    return Stack(
+      alignment: const Alignment(0.6, 0.6),
+      children: [
+        const CircleAvatar(
+          backgroundColor: Colors.blue,
+          radius: 100,
+          child: Icon(Icons.person, size: 100, color: Colors.white),
+        ),
+        Container(
+          decoration: const BoxDecoration(color: Colors.black45),
+          padding: const EdgeInsets.all(10),
+          child: const Text(
+            'Irsyad Dimas',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Build Card with contact information
+  Widget _buildCard() {
+    return SizedBox(
+      height: 210,
+      child: Card(
+        child: Column(
+          children: [
+            ListTile(
+              title: const Text(
+                'Jalan Soekarno Hatta No.123',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              subtitle: const Text('Kota Malang, Jawa Timur'),
+              leading: Icon(Icons.restaurant_menu, color: Colors.blue[500]),
+            ),
+            const Divider(),
+            ListTile(
+              title: const Text(
+                '05755896541',
+                style: TextStyle(fontWeight: FontWeight.w500),
+              ),
+              leading: Icon(Icons.contact_phone, color: Colors.blue[500]),
+            ),
+            ListTile(
+              title: const Text('Emailku@example.com'),
+              leading: Icon(Icons.contact_mail, color: Colors.blue[500]),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // Build multiple cards demo
+  Widget _buildCardsDemo() {
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        _buildCard(),
+        const SizedBox(height: 16),
+        Card(
+          elevation: 8,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Elevated Card',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                const Text('This card has elevation of 8'),
+                const SizedBox(height: 16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(onPressed: () {}, child: const Text('ACTION 1')),
+                    TextButton(onPressed: () {}, child: const Text('ACTION 2')),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Card(
+          elevation: 16,
+          child: ListTile(
+            leading: const CircleAvatar(
+              backgroundColor: Colors.purple,
+              child: Icon(Icons.music_note, color: Colors.white),
+            ),
+            title: const Text(
+              'Music Track',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            subtitle: const Text('Artist Name • Album'),
+            trailing: IconButton(
+              icon: const Icon(Icons.play_arrow),
+              onPressed: () {},
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -217,18 +347,22 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Layout Demo',
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
-        length: 4,
+        length: 7,
         child: Scaffold(
           backgroundColor: Colors.grey[200],
           appBar: AppBar(
             title: const Text('Flutter Layout Demo'),
             backgroundColor: Colors.green[500],
             bottom: const TabBar(
+              isScrollable: true,
               tabs: [
                 Tab(text: 'Recipe Card'),
                 Tab(text: 'Image Grid'),
                 Tab(text: 'GridView'),
                 Tab(text: 'ListView'),
+                Tab(text: 'Stack'),
+                Tab(text: 'Card'),
+                Tab(text: 'ListTile'),
               ],
             ),
           ),
@@ -260,6 +394,105 @@ class MyApp extends StatelessWidget {
               _buildGrid(),
               // Tab 4: ListView
               _buildList(),
+              // Tab 5: Stack
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildStack(),
+                    const SizedBox(height: 40),
+                    const Text(
+                      'Stack Demo',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text('Avatar with overlaid label NIM 2341720088'),
+                  ],
+                ),
+              ),
+              // Tab 6: Card
+              _buildCardsDemo(),
+              // Tab 7: ListTile in Card
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    const Text(
+                      'ListTile Examples',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          Card(
+                            child: ListTile(
+                              leading: const CircleAvatar(
+                                backgroundColor: Colors.red,
+                                child: Text(
+                                  'A',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              title: const Text('Alice Johnson'),
+                              subtitle: const Text('Software Engineer'),
+                              trailing: const Icon(Icons.arrow_forward_ios),
+                            ),
+                          ),
+                          Card(
+                            child: ListTile(
+                              leading: const CircleAvatar(
+                                backgroundColor: Colors.blue,
+                                child: Text(
+                                  'B',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              title: const Text('Bob Smith'),
+                              subtitle: const Text('Product Manager'),
+                              trailing: const Icon(Icons.arrow_forward_ios),
+                            ),
+                          ),
+                          Card(
+                            child: ListTile(
+                              leading: const CircleAvatar(
+                                backgroundColor: Colors.green,
+                                child: Text(
+                                  'C',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              title: const Text('Carol Williams'),
+                              subtitle: const Text('UX Designer'),
+                              trailing: const Icon(Icons.arrow_forward_ios),
+                            ),
+                          ),
+                          Card(
+                            child: ListTile(
+                              leading: const CircleAvatar(
+                                backgroundColor: Colors.orange,
+                                child: Text(
+                                  'D',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                              title: const Text('David Brown'),
+                              subtitle: const Text('Data Analyst'),
+                              trailing: const Icon(Icons.arrow_forward_ios),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

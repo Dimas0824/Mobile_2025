@@ -574,3 +574,5 @@ class MyApp extends StatelessWidget {
 Membuat gridview, dan listview
 ![alt text](img/t8.gif)
 
+Membuat stack card, avatar with overlaid label
+![alt text](img/t9.gif)
