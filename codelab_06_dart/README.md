@@ -411,3 +411,6 @@ Menambahkan pada image asset untuk ukuran gambar menggunakan Expanded
 
 Flex pada gambar agar gambar menyesuaikan ruang yang ada
 ![alt text](img/t4.png)
+
+Menambahkan ikon bintang di bawah gambar
+![alt text](img/t5.png)
