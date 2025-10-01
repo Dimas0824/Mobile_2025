@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Langkah 4 Praktikum 1: Implementasi title row
+    // Title row: Pemandian Alam Banyu Biru
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -19,12 +19,12 @@ class MyApp extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
-                    'Wisata Gunung di Batu',
+                    'Pemandian Alam Banyu Biru',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
-                  'Batu, Malang, Indonesia',
+                  'Banyu Biru, Pasuruan, Indonesia',
                   style: TextStyle(color: Colors.grey[500]),
                 ),
               ],
@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    // Langkah 2 Praktikum 2: Buat widget buttonSection
     Color color = Theme.of(context).primaryColor;
 
     Widget buttonSection = Row(
@@ -48,17 +47,40 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    // Info tentang Pemandian Alam Banyu Biru
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Pemandian Alam Banyu Biru adalah salah satu destinasi wisata alam di Pasuruan, Jawa Timur. '
+        'Tempat ini terkenal dengan kolam renang alami yang airnya jernih dan segar, berasal langsung dari mata air pegunungan. '
+        'Pemandian ini menawarkan suasana asri, pepohonan rindang, dan udara yang sejuk. '
+        'Nama: Muhammad Irsyad Dimas Abdillah, NIM: 2341720088. '
+        'Banyu Biru juga menjadi tempat favorit untuk rekreasi keluarga dan wisata edukasi tentang sumber air alami.',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Flutter layout: Muhammad Irsyad Dimas Abdillah dan 2341720088',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        // Langkah 3 Praktikum 2: Tambah button section ke body
-        body: Column(children: [titleSection, buttonSection]),
+        body: ListView(
+          children: [
+            Image.asset(
+              'img/KolamBB.png',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
+            titleSection,
+            buttonSection,
+            textSection,
+          ],
+        ),
       ),
     );
   }
 
-  // Langkah 1 Praktikum 2: Buat method Column _buildButtonColumn
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
