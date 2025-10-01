@@ -414,3 +414,4 @@ Flex pada gambar agar gambar menyesuaikan ruang yang ada
 
 Menambahkan ikon bintang di bawah gambar
 ![alt text](img/t5.png)
+![alt text](img/t6.png)
