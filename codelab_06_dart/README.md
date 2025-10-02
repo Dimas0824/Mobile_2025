@@ -576,3 +576,8 @@ Membuat gridview, dan listview
 
 Membuat stack card, avatar with overlaid label
 ![alt text](img/t9.gif)
+
+## Praktikum 5: Membangun Navigasi di Flutter
+![alt text](img/p5.gif)
+
+## TUGAS 2
