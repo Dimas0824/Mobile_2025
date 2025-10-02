@@ -12,7 +12,7 @@ class ItemPage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          // Bagian header dengan efek scroll (SliverAppBar)
+          // Bagian header dengan efek scroll
           SliverAppBar(
             expandedHeight: 300, // tinggi maksimum saat di-expand
             pinned: true, // tetap tampil meskipun di-scroll
@@ -179,7 +179,7 @@ class ItemPage extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
