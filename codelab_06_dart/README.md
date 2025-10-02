@@ -581,3 +581,6 @@ Membuat stack card, avatar with overlaid label
 ![alt text](img/p5.gif)
 
 ## TUGAS 2
+Pada praktikum ini saya mengimplementasikan navigasi dengan mengirim data antar halaman menggunakan Navigator dan membacanya kembali dengan ModalRoute. Tampilan aplikasi belanja diperbarui menjadi GridView, ditambahkan atribut foto, stok, rating, serta efek animasi menggunakan Hero widget. Selain itu, saya juga mencoba modifikasi navigasi menggunakan plugin go_router, mendokumentasikan hasilnya, dan melakukan push ke GitHub.
+
+![alt text](img/t10.gif)
