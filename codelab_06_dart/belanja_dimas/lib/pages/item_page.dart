@@ -6,25 +6,28 @@ class ItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Mengambil data Item yang dikirim lewat Navigator
     final Item itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
+          // Bagian header dengan efek scroll (SliverAppBar)
           SliverAppBar(
-            expandedHeight: 300,
-            pinned: true,
+            expandedHeight: 300, // tinggi maksimum saat di-expand
+            pinned: true, // tetap tampil meskipun di-scroll
             backgroundColor: Colors.deepPurple,
             leading: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context), // tombol back
             ),
             flexibleSpace: FlexibleSpaceBar(
               background: Hero(
-                tag: 'item-${itemArgs.name}',
+                tag: 'item-${itemArgs.name}', // animasi Hero
                 child: Image.network(
                   itemArgs.imageUrl,
                   fit: BoxFit.cover,
+                  // Error handler jika gambar gagal dimuat
                   errorBuilder: (context, error, stackTrace) {
                     return Container(
                       color: Colors.grey.shade200,
@@ -41,12 +44,14 @@ class ItemPage extends StatelessWidget {
               ),
             ),
           ),
+          // Bagian isi konten produk
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Nama Produk
                   Text(
                     itemArgs.name,
                     style: const TextStyle(
@@ -55,6 +60,7 @@ class ItemPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
+                  // Informasi Rating & Stock
                   Row(
                     children: [
                       _buildInfoCard(
@@ -73,6 +79,7 @@ class ItemPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 24),
+                  // Informasi Harga
                   Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -102,6 +109,7 @@ class ItemPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
+                  // Deskripsi Produk
                   const Text(
                     'Product Description',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -119,11 +127,13 @@ class ItemPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 32),
+                  // Tombol Add to Cart
                   SizedBox(
                     width: double.infinity,
                     height: 56,
                     child: ElevatedButton(
                       onPressed: () {
+                        // Menampilkan snackbar ketika produk ditambahkan ke cart
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('${itemArgs.name} added to cart!'),
@@ -158,6 +168,7 @@ class ItemPage extends StatelessWidget {
     );
   }
 
+  // Widget helper untuk membuat kartu informasi (rating & stock)
   Widget _buildInfoCard({
     required IconData icon,
     required String label,
