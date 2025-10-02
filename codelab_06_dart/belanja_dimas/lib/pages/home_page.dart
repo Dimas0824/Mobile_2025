@@ -10,9 +10,9 @@ class HomePage extends StatelessWidget {
     final List<Item> items = [
       Item(
         name: 'Sugar',
-        price: 5000,
+        price: 17500,
         imageUrl:
-            'https://images.unsplash.com/photo-1587241321921-91a834d82e6e?w=400',
+            'https://plus.unsplash.com/premium_photo-1726072362679-2b2023862024?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Gula pasir
         stock: 50,
         rating: 4.5,
       ),
@@ -20,23 +20,23 @@ class HomePage extends StatelessWidget {
         name: 'Salt',
         price: 2000,
         imageUrl:
-            'https://images.unsplash.com/photo-1598511726623-d2e9996892f0?w=400',
+            'https://plus.unsplash.com/premium_photo-1672349888046-361807de476f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Garam dapur
         stock: 100,
         rating: 4.8,
       ),
       Item(
         name: 'Rice',
-        price: 15000,
+        price: 14000,
         imageUrl:
-            'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400',
+            'https://plus.unsplash.com/premium_photo-1705338026411-00639520a438?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmljZXxlbnwwfHwwfHx8MA%3D%3D', // Beras
         stock: 30,
         rating: 4.7,
       ),
       Item(
         name: 'Cooking Oil',
-        price: 25000,
+        price: 21000,
         imageUrl:
-            'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400',
+            'https://images.unsplash.com/photo-1720468750623-39e9a09f5067?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Minyak goreng
         stock: 20,
         rating: 4.6,
       ),
@@ -44,31 +44,31 @@ class HomePage extends StatelessWidget {
         name: 'Flour',
         price: 8000,
         imageUrl:
-            'https://images.unsplash.com/photo-1628057238584-e604b8edd5c5?w=400',
+            'https://plus.unsplash.com/premium_photo-1671377660174-e43996bfdf03?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Tepung terigu
         stock: 45,
         rating: 4.4,
       ),
       Item(
         name: 'Coffee',
-        price: 12000,
+        price: 25000,
         imageUrl:
-            'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400',
+            'https://plus.unsplash.com/premium_photo-1666174326095-37c94a3e93f4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Kopi bubuk
         stock: 60,
         rating: 4.9,
       ),
       Item(
         name: 'Tea',
-        price: 7000,
+        price: 12000,
         imageUrl:
-            'https://images.unsplash.com/photo-1597318281699-124a4a0af363?w=400',
+            'https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Teh celup
         stock: 80,
         rating: 4.3,
       ),
       Item(
         name: 'Milk',
-        price: 10000,
+        price: 18000,
         imageUrl:
-            'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400',
+            'https://images.unsplash.com/photo-1634141510639-d691d86f47be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWlsa3xlbnwwfHwwfHx8MA%3D%3D', // Susu cair
         stock: 35,
         rating: 4.7,
       ),

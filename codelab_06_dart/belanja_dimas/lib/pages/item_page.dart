@@ -108,8 +108,10 @@ class ItemPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'This is a high-quality ${itemArgs.name.toLowerCase()} product available in our store. '
-                    'Perfect for your daily needs with excellent quality and affordable price.',
+                    'Discover the premium quality of our ${itemArgs.name.toLowerCase()}! '
+                    'Expertly crafted for durability and comfort, this product is ideal for everyday use. '
+                    'Enjoy outstanding performance, stylish design, and unbeatable value. '
+                    'Order now and experience the difference in quality that sets our products apart.',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey.shade700,
