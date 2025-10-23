@@ -46,3 +46,16 @@ Output:
 ![alt text](<img/Praktikum 2.gif>)
 
 ## TUGAS
+
+2. Gabungkan hasil praktikum 1 dengan hasil praktikum 2 sehingga setelah melakukan pengambilan foto, dapat dibuat filter carouselnya! <br>
+![alt text](img/gabungan_kamera&filter.gif)
+
+3. Jelaskan maksud void async pada praktikum 1?<br>
+jawab: void async pada main praktikum 1 berfungsi agar bisa menjalankan proses lain yang butuh waktu lebih lama (memerlukan buka kamera) tanpa menutupi atau menghambat proses lain yang sedang berjalan. Ini memungkinkan pakai await agar proses selesai dulu sebelum lanjut ke langkah berikutnya.
+
+4. Jelaskan fungsi dari anotasi @immutable dan @override ?<br>
+jawab: 
+    a. @immutable: Menandakan bahwa sebuah class tidak boleh diubah setelah dibuat. Semua properti dalam class tersebut harus final. Digunakan untuk menjaga konsistensi data dan mencegah perubahan tak disengaja.
+    b. @override: Digunakan saat kita ingin menimpa (mengubah) method atau properti dari superclass. Ini memberi tahu compiler bahwa kita sengaja mengganti implementasi bawaan.
+
+
