@@ -34,3 +34,15 @@
 ---
 
 ## Praktikum 1: Mengambil Foto dengan Kamera di Flutter
+
+Hasil Build Apk:
+
+![alt text](img/image.png)
+
+## Praktikum 2: Membuat photo filter carousel
+
+Output:
+
+![alt text](<img/Praktikum 2.gif>)
+
+## TUGAS
