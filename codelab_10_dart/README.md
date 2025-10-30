@@ -74,3 +74,15 @@ Selesaikan langkah-langkah praktikum, dokumentasikan hasil akhir berupa GIF bese
     
 4. Kumpulkan laporan praktikum.  
     Cantumkan link commit atau repository GitHub (mis. URL ke commit atau repo) yang berisi kode, GIF, dan penjelasan lalu kirim ke dosen sesuai kesepakatan.
+
+
+## Praktikum 3: Membuat State di Multiple Screens
+Hasil Build Apk:
+![alt text](<img/Prak3 (1).gif>)
+
+## TUGAS PRAKTIKUM 3: State di Multiple Screens
+Selesaikan langkah-langkah praktikum tersebut, lalu dokumentasikan berupa GIF hasil akhir praktikum beserta penjelasannya di file README.md! Jika Anda menemukan ada yang error atau tidak berjalan dengan baik, silakan diperbaiki sesuai dengan tujuan aplikasi tersebut dibuat.
+
+1. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!
+![alt text](img/image.png)
+    jawab: Diagram tersebut menunjukkan bagaimana widget tree Flutter berubah ketika terjadi navigasi antar layar menggunakan Navigator.push. Sebelum navigasi, aplikasi menampilkan PlanCreatorScreen untuk membuat daftar rencana baru. Setelah navigasi, aplikasi berpindah ke PlanScreen yang menampilkan detail dari rencana tertentu. Intinya, diagram ini menggambarkan bagaimana state yang dikelola oleh PlanProvider tetap bisa diakses lintas layar meskipun widget tree berubah total.
