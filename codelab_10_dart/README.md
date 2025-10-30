@@ -56,19 +56,21 @@ Hasil Build Apk:
 
 ## Praktikum 2: Mengelola Data Layer dengan InheritedWidget dan InheritedNotifier
 Hasil Build Apk:
-![alt text](img/Prak2.gif)
+![alt text](img/Prak2.png)
+![alt text](img/Prak2GIF.gif)
 
 ## TUGAS PRAKTIKUM 2: InheritedWidget
 Selesaikan langkah-langkah praktikum, dokumentasikan hasil akhir berupa GIF beserta penjelasan di file README.md. Jika menemukan error atau perilaku yang tidak sesuai tujuan aplikasi, perbaiki lalu catat perubahan yang dilakukan.
 
 1. Jelaskan mana yang dimaksud InheritedWidget pada langkah 1. Mengapa digunakan InheritedNotifier?  
-    Jawab: 
+    Jawab: PlanProvider pada langkah 1 adalah subclass dari InheritedNotifier. InheritedWidget dipakai agar data (Plan) bisa diakses oleh seluruh widget turunan tanpa harus mengoper parameter manual. Dipilih InheritedNotifier karena kita ingin data (Plan) bisa berubah dinamis, dan setiap perubahan otomatis memberi tahu (notify) widget-widget yang bergantung padanya untuk rebuild.
 
 2. Jelaskan maksud dari method di langkah 3 pada praktikum tersebut. Mengapa dilakukan demikian?  
-    Jawab: 
+    Jawab:  method completedCount digunakan untuk menghitung jumlah task yang sudah selesai, sedangkan completenessMessage membuat teks ringkas seperti “2 out of 5 tasks”. Tujuannya agar aplikasi bisa menampilkan progres penyelesaian tugas secara otomatis berdasarkan data task yang ada. Dengan begitu, pengguna langsung tahu sejauh mana rencana sudah dikerjakan.
 
 3. Capture hasil dari Langkah 9 berupa GIF, kemudian jelaskan apa yang telah Anda buat.  
-    Instruksi: Buat GIF yang memperlihatkan alur interaksi utama (mis. mengubah task, checkbox, menambah/hapus item) lalu tambahkan ke repo di path img/Prak2.gif. Di README.md, sertakan keterangan singkat: apa fitur yang diuji, bagaimana state berpindah melalui InheritedNotifier, dan contoh perubahan UI yang terlihat pada GIF.
-
+    jawab:
+    ![alt text](img/Prak2Tugas.gif)
+    
 4. Kumpulkan laporan praktikum.  
     Cantumkan link commit atau repository GitHub (mis. URL ke commit atau repo) yang berisi kode, GIF, dan penjelasan lalu kirim ke dosen sesuai kesepakatan.
