@@ -78,6 +78,16 @@ class _FuturePageState extends State<FuturePage> {
     completer.complete(42);
   }
 
+  Future calculate2() async {
+    try {
+      await new Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+      //Throw Exception();
+    } catch (_) {
+      completer.completeError({});
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,11 +112,15 @@ class _FuturePageState extends State<FuturePage> {
 
                 // count();
 
-                getNumber().then((value) {
-                  setState(() {
-                    result = value.toString();
-                  });
-                });
+                getNumber()
+                    .then((value) {
+                      setState(() {
+                        result = value.toString();
+                      });
+                    })
+                    .catchError((e) {
+                      result = 'An error occurred';
+                    });
               },
             ),
             const SizedBox(height: 20),

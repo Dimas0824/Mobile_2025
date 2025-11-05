@@ -65,4 +65,11 @@ Cara ini memungkinkan kita mengatur sendiri kapan Future selesai, misalnya untuk
 GIF hasil running aplikasi:
 ![alt text](img/prak5S5.gif)
 
-## 
+### Soal 6
+- Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut! <br>
+jawab: langkah 5 dan 6 bertujuan untuk membuat sebuah metode untuk mengambil nilai secara asynchronous dengan kontrol manual, lalu menampilkan hasilnya ke UI atau menangani error jika gagal.
+
+GIF hasil running aplikasi:
+![alt text](img/prak5S5.gif)
+
+## Praktikum 4: Menggunakan Stream untuk Mengelola Data Asynchronous
