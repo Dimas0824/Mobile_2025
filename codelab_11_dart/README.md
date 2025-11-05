@@ -63,13 +63,18 @@ Saat getNumber() dijalankan, aplikasi membuat Completer, lalu calculate() menung
 Cara ini memungkinkan kita mengatur sendiri kapan Future selesai, misalnya untuk meniru proses yang butuh waktu lama.
 
 GIF hasil running aplikasi:
-![alt text](img/prak5S5.gif)
+![alt text](img/prak3S5.gif)
 
 ### Soal 6
 - Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut! <br>
 jawab: langkah 5 dan 6 bertujuan untuk membuat sebuah metode untuk mengambil nilai secara asynchronous dengan kontrol manual, lalu menampilkan hasilnya ke UI atau menangani error jika gagal.
 
 GIF hasil running aplikasi:
-![alt text](img/prak5S5.gif)
+![alt text](img/prak3S5.gif)
 
 ## Praktikum 4: Menggunakan Stream untuk Mengelola Data Asynchronous
+
+### Soal 7
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 7".
+jawab: GIF hasil running aplikasi:
+![alt text](img/prak4S7.gif)
