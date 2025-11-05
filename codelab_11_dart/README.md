@@ -95,3 +95,12 @@ Jelaskan perbedaan kode langkah 1 dan 4
 Jawaban:  
 - Langkah 1: Membuat unit async sederhana (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) untuk mensimulasikan proses asynchronous terpisah, masing‑masing menunggu beberapa detik lalu mengembalikan angka.
 - Langkah 4: Mengganti atau menggabungkan pemanggilan menggunakan `Future.wait(...)` (atau alternatif seperti `FutureGroup`) sehingga beberapa Future dijalankan bersamaan dan hasilnya diproses setelah semuanya selesai. Perbedaan utama: langkah 1 fokus pada pembuatan task async tunggal, langkah 4 fokus pada pengelolaan dan sinkronisasi banyak task sekaligus.
+
+## Praktikum 5: Menangani Respon Error pada Async Code
+### Soal 9
+Hasil running aplikasi:
+![GIF praktik 5 soal 9](img/prak5S9.gif)
+
+### Soal 10
+Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4! <br>
+Jawaban: 
