@@ -35,46 +35,63 @@
 
 ## Praktikum 1: Mengunduh Data dari Web Service (API)
 
-### Soal 1-2 
-Nama dan Hasil API bookstore yang diakses dari URL:
-![alt text](img/image.png)
+### Soal 1–2
+Nama dan hasil pemanggilan API bookstore (tampilkan screenshot hasil request):  
+![Hasil API](img/image.png)
 
 ### Soal 3
-- Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError! <br>
-jawab: Saat tombol GO! ditekan, aplikasi memanggil fetchData() untuk mengambil data dari API. Jika berhasil, isi respons (value.body) diubah menjadi string dan dipotong hanya 450 karakter pertama menggunakan substring(0, 450) agar tampilannya ringkas dan tidak overload di UI. Jika terjadi error (misalnya koneksi gagal), blok catchError akan menampilkan pesan fallback: "An error occurred" ke layar, menjaga agar aplikasi tetap responsif dan tidak crash.
+Jelaskan maksud kode langkah 5 terkait `substring` dan `catchError`  
+Jawaban: Saat tombol "GO!" ditekan aplikasi memanggil `fetchData()`. Jika request sukses, response body (`value.body`) diubah menjadi string lalu dipotong menjadi 450 karakter pertama dengan `substring(0, 450)` agar tampilan ringkas dan tidak memenuhi UI. Jika terjadi error (mis. koneksi gagal), blok `catchError` menangkap error tersebut dan menampilkan pesan fallback seperti "An error occurred" sehingga aplikasi tidak crash dan tetap responsif.
 
-GIF hasil running aplikasi:
-![alt text](<img/soal 3 (1).gif>)
+GIF hasil running aplikasi:  
+![GIF hasil running aplikasi](img/soal%203%20(1).gif)
+
+---
 
 ## Praktikum 2: Menggunakan await/async untuk menghindari callbacks
 
-### Soal 4 
-- Jelaskan maksud kode langkah 1 dan 2 tersebut! <br>
-jawab: langkah 1 adalah membuat metode returnOneAsync() hingga three, dimana ketiganya melakukan simulasi proses asynchronous dengan menunggu selama 3 detik menggunakan Future.delayed sebelum mengembalikan nilai integer (1, 2, atau 3). Langkah 2 adalah membuat metode sumAsync() yang memanggil ketiga metode sebelumnya secara berurutan menggunakan await untuk menunggu hasilnya. Setelah mendapatkan ketiga nilai, sumAsync() menjumlahkannya dan mengembalikan totalnya sebagai Future<int>. Sedangkan langkah kedua yaitu membuat metode count() yang memanggil ketiga metode returnOneAsync() hingga three secara bersamaan menggunakan Future.wait. Metode ini menunggu hingga semua Future selesai dan mengembalikan daftar hasilnya. Kemudian, count() menjumlahkan semua nilai dalam daftar tersebut dan mengembalikan totalnya sebagai Future<int>.
+### Soal 4
+Jelaskan maksud kode langkah 1 dan 2  
+Jawaban:
+- Langkah 1: Membuat metode async `returnOneAsync()`, `returnTwoAsync()`, `returnThreeAsync()` yang mensimulasikan operasi asynchronous dengan `Future.delayed` (mis. 3 detik) kemudian mengembalikan nilai integer (1, 2, 3).
+- Langkah 2: 
+    - `sumAsync()` memanggil ketiga metode di atas satu per satu menggunakan `await`, menunggu hasil masing‑masing, lalu menjumlahkannya dan mengembalikan total sebagai `Future<int>`.
+    - Alternatifnya dibuat metode `count()` yang memanggil ketiga Future secara bersamaan menggunakan `Future.wait(...)`, menunggu semua selesai, lalu menjumlahkan daftar hasilnya. Ini lebih efisien jika operasi tidak bergantung satu sama lain.
 
-GIF hasil running aplikasi:![alt text](img/image2.png)
+GIF hasil running aplikasi:  
+![GIF praktik 2](img/image2.png)
+
+---
 
 ## Praktikum 3: Menggunakan Completer di Future
 
 ### Soal 5
-- Jelaskan maksud kode langkah 2 tersebut! <br>
-jawab: Pada langkah 2, dibuat dua metode: futureGetNumber dan calculate.
-Saat getNumber() dijalankan, aplikasi membuat Completer, lalu calculate() menunggu 5 detik sebelum memberikan nilai 42. Nilai ini dikembalikan sebagai Future.
-Cara ini memungkinkan kita mengatur sendiri kapan Future selesai, misalnya untuk meniru proses yang butuh waktu lama.
+Jelaskan maksud kode langkah 2  
+Jawaban: Pada langkah ini dibuat dua fungsi utama: `futureGetNumber()` dan `calculate()`. `futureGetNumber()` membuat sebuah `Completer` dan mengembalikan `completer.future`. Fungsi `calculate()` menunggu selama beberapa detik (mis. 5 detik) lalu memanggil `completer.complete(42)` untuk menyelesaikan Future dengan nilai 42. Pola ini memberi kontrol manual kapan sebuah Future dianggap selesai, berguna untuk mensimulasikan atau mengendalikan alur asynchronous.
 
-GIF hasil running aplikasi:
-![alt text](img/prak3S5.gif)
+GIF hasil running aplikasi:  
+![GIF praktik 3 soal 5](img/prak3S5.gif)
 
 ### Soal 6
-- Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut! <br>
-jawab: langkah 5 dan 6 bertujuan untuk membuat sebuah metode untuk mengambil nilai secara asynchronous dengan kontrol manual, lalu menampilkan hasilnya ke UI atau menangani error jika gagal.
+Jelaskan perbedaan kode langkah 2 dengan langkah 5–6  
+Jawaban: Langkah 2 memperlihatkan pembuatan Future yang diselesaikan secara manual menggunakan `Completer`, sedangkan langkah 5–6 mengimplementasikan cara mengambil nilai asynchronous tersebut dan menampilkannya di UI atau menangani error. Intinya:
+- Langkah 2 → fokus pada pembuatan dan penyelesaian Future (kontrol manual).
+- Langkah 5–6 → fokus pada konsumsi hasil Future (display UI, penanganan error, integrasi ke alur aplikasi).
 
-GIF hasil running aplikasi:
-![alt text](img/prak3S5.gif)
+GIF hasil running aplikasi:  
+![GIF praktik 3 soal 6](img/prak3S5.gif)
+
+---
 
 ## Praktikum 4: Menggunakan Stream untuk Mengelola Data Asynchronous
 
 ### Soal 7
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W11: Soal 7".
-jawab: GIF hasil running aplikasi:
-![alt text](img/prak4S7.gif)
+Capture hasil praktikum berupa GIF dan lakukan commit dengan pesan "W11: Soal 7".  
+Jawaban: GIF hasil running aplikasi:  
+![GIF praktik 4 soal 7](img/prak4S7.gif)
+
+### Soal 8
+Jelaskan perbedaan kode langkah 1 dan 4  
+Jawaban:  
+- Langkah 1: Membuat unit async sederhana (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) untuk mensimulasikan proses asynchronous terpisah, masing‑masing menunggu beberapa detik lalu mengembalikan angka.
+- Langkah 4: Mengganti atau menggabungkan pemanggilan menggunakan `Future.wait(...)` (atau alternatif seperti `FutureGroup`) sehingga beberapa Future dijalankan bersamaan dan hasilnya diproses setelah semuanya selesai. Perbedaan utama: langkah 1 fokus pada pembuatan task async tunggal, langkah 4 fokus pada pengelolaan dan sinkronisasi banyak task sekaligus.
