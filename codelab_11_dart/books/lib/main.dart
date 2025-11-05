@@ -18,13 +18,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const FuturePage(),
+      home: const FuturePage(title: 'Irsyad Dimas'),
     );
   }
 }
 
 class FuturePage extends StatefulWidget {
-  const FuturePage({super.key});
+  final String title;
+  const FuturePage({super.key, required this.title});
 
   @override
   State<FuturePage> createState() => _FuturePageState();
@@ -43,16 +44,30 @@ class _FuturePageState extends State<FuturePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Future')),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(child: const Text('GO!'), onPressed: () {}),
-            const Spacer(),
-            Text(result),
-            const Spacer(),
+            ElevatedButton(
+              child: const Text('GO!'),
+              onPressed: () {
+                setState(() {}); // hanya trigger rebuild
+                fetchData()
+                    .then((value) {
+                      result = value.body.toString().substring(0, 450);
+                      setState(() {});
+                    })
+                    .catchError((_) {
+                      result = 'An error occurred';
+                      setState(() {});
+                    });
+              },
+            ),
+            const SizedBox(height: 20),
+            Text(result, textAlign: TextAlign.center),
+            const SizedBox(height: 20),
             const CircularProgressIndicator(),
-            const Spacer(),
           ],
         ),
       ),

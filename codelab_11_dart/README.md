@@ -35,5 +35,13 @@
 
 ## Praktikum 1: Mengunduh Data dari Web Service (API)
 
-Hasil API bookstore yang diakses dari URL:
+### Soal 1-2 
+Nama dan Hasil API bookstore yang diakses dari URL:
 ![alt text](img/image.png)
+
+### Soal 3
+- Jelaskan maksud kode langkah 5 tersebut terkait substring dan catchError! <br>
+jawab: Saat tombol GO! ditekan, aplikasi memanggil fetchData() untuk mengambil data dari API. Jika berhasil, isi respons (value.body) diubah menjadi string dan dipotong hanya 450 karakter pertama menggunakan substring(0, 450) agar tampilannya ringkas dan tidak overload di UI. Jika terjadi error (misalnya koneksi gagal), blok catchError akan menampilkan pesan fallback: "An error occurred" ke layar, menjaga agar aplikasi tetap responsif dan tidak crash.
+
+GIF hasil running aplikasi:
+![alt text](<img/soal 3 (1).gif>)
