@@ -45,3 +45,14 @@ jawab: Saat tombol GO! ditekan, aplikasi memanggil fetchData() untuk mengambil d
 
 GIF hasil running aplikasi:
 ![alt text](<img/soal 3 (1).gif>)
+
+## Praktikum 2: Menggunakan await/async untuk menghindari callbacks
+
+### Soal 4
+- Jelaskan maksud kode langkah 1 dan 2 tersebut!
+jawab: langkah 1 adalah membuat metode returnOneAsync() hingga three, dimana ketiganya melakukan simulasi proses asynchronous dengan menunggu selama 3 detik menggunakan Future.delayed sebelum mengembalikan nilai integer (1, 2, atau 3). Langkah 2 adalah membuat metode sumAsync() yang memanggil ketiga metode sebelumnya secara berurutan menggunakan await untuk menunggu hasilnya. Setelah mendapatkan ketiga nilai, sumAsync() menjumlahkannya dan mengembalikan totalnya sebagai Future<int>. Sedangkan langkah kedua yaitu membuat metode count() yang memanggil ketiga metode returnOneAsync() hingga three secara bersamaan menggunakan Future.wait. Metode ini menunggu hingga semua Future selesai dan mengembalikan daftar hasilnya. Kemudian, count() menjumlahkan semua nilai dalam daftar tersebut dan mengembalikan totalnya sebagai Future<int>.
+
+GIF hasil running aplikasi:![alt text](img/image2.png)
+
+## Praktikum 3: Menggunakan Completer di Future
+
