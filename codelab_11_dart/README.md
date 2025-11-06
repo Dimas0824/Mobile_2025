@@ -36,29 +36,38 @@
 ## Praktikum 1: Mengunduh Data dari Web Service (API)
 
 ### Soal 1–2
-Nama dan hasil pemanggilan API bookstore (tampilkan screenshot hasil request):  
+Nama dan hasil pemanggilan API bookstore (tampilkan screenshot hasil request):
+
 ![Hasil API](img/image.png)
 
 ### Soal 3
-Jelaskan maksud kode langkah 5 terkait `substring` dan `catchError`  
-Jawaban: Saat tombol "GO!" ditekan aplikasi memanggil `fetchData()`. Jika request sukses, response body (`value.body`) diubah menjadi string lalu dipotong menjadi 450 karakter pertama dengan `substring(0, 450)` agar tampilan ringkas dan tidak memenuhi UI. Jika terjadi error (mis. koneksi gagal), blok `catchError` menangkap error tersebut dan menampilkan pesan fallback seperti "An error occurred" sehingga aplikasi tidak crash dan tetap responsif.
+**Jelaskan maksud kode langkah 5 terkait `substring` dan `catchError`**
 
-GIF hasil running aplikasi:  
+**Jawaban:**
+
+Saat tombol "GO!" ditekan aplikasi memanggil `fetchData()`. Jika request sukses, response body (`value.body`) diubah menjadi string lalu dipotong menjadi 450 karakter pertama dengan `substring(0, 450)` agar tampilan ringkas dan tidak memenuhi UI. Jika terjadi error (mis. koneksi gagal), blok `catchError` menangkap error tersebut dan menampilkan pesan fallback seperti "An error occurred" sehingga aplikasi tidak crash dan tetap responsif.
+
+**GIF hasil running aplikasi:**
+
 ![GIF hasil running aplikasi](img/soal%203%20(1).gif)
 
 ---
 
-## Praktikum 2: Menggunakan await/async untuk menghindari callbacks
+## Praktikum 2: Menggunakan await/async untuk Menghindari Callbacks
 
 ### Soal 4
-Jelaskan maksud kode langkah 1 dan 2  
-Jawaban:
-- Langkah 1: Membuat metode async `returnOneAsync()`, `returnTwoAsync()`, `returnThreeAsync()` yang mensimulasikan operasi asynchronous dengan `Future.delayed` (mis. 3 detik) kemudian mengembalikan nilai integer (1, 2, 3).
-- Langkah 2: 
+**Jelaskan maksud kode langkah 1 dan 2**
+
+**Jawaban:**
+
+- **Langkah 1:** Membuat metode async `returnOneAsync()`, `returnTwoAsync()`, `returnThreeAsync()` yang mensimulasikan operasi asynchronous dengan `Future.delayed` (mis. 3 detik) kemudian mengembalikan nilai integer (1, 2, 3).
+
+- **Langkah 2:**
     - `sumAsync()` memanggil ketiga metode di atas satu per satu menggunakan `await`, menunggu hasil masing‑masing, lalu menjumlahkannya dan mengembalikan total sebagai `Future<int>`.
     - Alternatifnya dibuat metode `count()` yang memanggil ketiga Future secara bersamaan menggunakan `Future.wait(...)`, menunggu semua selesai, lalu menjumlahkan daftar hasilnya. Ini lebih efisien jika operasi tidak bergantung satu sama lain.
 
-GIF hasil running aplikasi:  
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 2](img/image2.png)
 
 ---
@@ -66,19 +75,28 @@ GIF hasil running aplikasi:
 ## Praktikum 3: Menggunakan Completer di Future
 
 ### Soal 5
-Jelaskan maksud kode langkah 2  
-Jawaban: Pada langkah ini dibuat dua fungsi utama: `futureGetNumber()` dan `calculate()`. `futureGetNumber()` membuat sebuah `Completer` dan mengembalikan `completer.future`. Fungsi `calculate()` menunggu selama beberapa detik (mis. 5 detik) lalu memanggil `completer.complete(42)` untuk menyelesaikan Future dengan nilai 42. Pola ini memberi kontrol manual kapan sebuah Future dianggap selesai, berguna untuk mensimulasikan atau mengendalikan alur asynchronous.
+**Jelaskan maksud kode langkah 2**
 
-GIF hasil running aplikasi:  
+**Jawaban:**
+
+Pada langkah ini dibuat dua fungsi utama: `futureGetNumber()` dan `calculate()`. `futureGetNumber()` membuat sebuah `Completer` dan mengembalikan `completer.future`. Fungsi `calculate()` menunggu selama beberapa detik (mis. 5 detik) lalu memanggil `completer.complete(42)` untuk menyelesaikan Future dengan nilai 42. Pola ini memberi kontrol manual kapan sebuah Future dianggap selesai, berguna untuk mensimulasikan atau mengendalikan alur asynchronous.
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 3 soal 5](img/prak3S5.gif)
 
 ### Soal 6
-Jelaskan perbedaan kode langkah 2 dengan langkah 5–6  
-Jawaban: Langkah 2 memperlihatkan pembuatan Future yang diselesaikan secara manual menggunakan `Completer`, sedangkan langkah 5–6 mengimplementasikan cara mengambil nilai asynchronous tersebut dan menampilkannya di UI atau menangani error. Intinya:
-- Langkah 2 → fokus pada pembuatan dan penyelesaian Future (kontrol manual).
-- Langkah 5–6 → fokus pada konsumsi hasil Future (display UI, penanganan error, integrasi ke alur aplikasi).
+**Jelaskan perbedaan kode langkah 2 dengan langkah 5–6**
 
-GIF hasil running aplikasi:  
+**Jawaban:**
+
+Langkah 2 memperlihatkan pembuatan Future yang diselesaikan secara manual menggunakan `Completer`, sedangkan langkah 5–6 mengimplementasikan cara mengambil nilai asynchronous tersebut dan menampilkannya di UI atau menangani error. Intinya:
+
+- **Langkah 2** → Fokus pada pembuatan dan penyelesaian Future (kontrol manual).
+- **Langkah 5–6** → Fokus pada konsumsi hasil Future (display UI, penanganan error, integrasi ke alur aplikasi).
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 3 soal 6](img/prak3S5.gif)
 
 ---
@@ -86,34 +104,45 @@ GIF hasil running aplikasi:
 ## Praktikum 4: Menggunakan Stream untuk Mengelola Data Asynchronous
 
 ### Soal 7
-Capture hasil praktikum berupa GIF dan lakukan commit dengan pesan "W11: Soal 7".  
-Jawaban: GIF hasil running aplikasi:  
+**Capture hasil praktikum berupa GIF dan lakukan commit dengan pesan "W11: Soal 7"**
+
+**Jawaban:**
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 4 soal 7](img/prak4S7.gif)
 
 ### Soal 8
-Jelaskan perbedaan kode langkah 1 dan 4  
-Jawaban:  
-- Langkah 1: Membuat unit async sederhana (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) untuk mensimulasikan proses asynchronous terpisah, masing‑masing menunggu beberapa detik lalu mengembalikan angka.
-- Langkah 4: Mengganti atau menggabungkan pemanggilan menggunakan `Future.wait(...)` (atau alternatif seperti `FutureGroup`) sehingga beberapa Future dijalankan bersamaan dan hasilnya diproses setelah semuanya selesai. Perbedaan utama: langkah 1 fokus pada pembuatan task async tunggal, langkah 4 fokus pada pengelolaan dan sinkronisasi banyak task sekaligus.
+**Jelaskan perbedaan kode langkah 1 dan 4**
+
+**Jawaban:**
+
+- **Langkah 1:** Membuat unit async sederhana (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) untuk mensimulasikan proses asynchronous terpisah, masing‑masing menunggu beberapa detik lalu mengembalikan angka.
+
+- **Langkah 4:** Mengganti atau menggabungkan pemanggilan menggunakan `Future.wait(...)` (atau alternatif seperti `FutureGroup`) sehingga beberapa Future dijalankan bersamaan dan hasilnya diproses setelah semuanya selesai. Perbedaan utama: langkah 1 fokus pada pembuatan task async tunggal, langkah 4 fokus pada pengelolaan dan sinkronisasi banyak task sekaligus.
 
 ---
 
 ## Praktikum 5: Menangani Respon Error pada Async Code
+
 ### Soal 9
-Hasil running aplikasi:
+**Hasil running aplikasi:**
+
 ![GIF praktik 5 soal 9](img/prak5S9.gif)
 
 ### Soal 10
-Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4! <br>
-Jawaban: Ketika tombol GO! ditekan, jika proses berhasil maka muncul tulisan “Success”.
-Kalau terjadi error, pesan error seperti “An error occurred” akan tampil, dan setelah itu “Complete” tetap dicetak di console.
-Artinya, aplikasi tetap aman dan selalu menandai proses sudah selesai.
+**Panggil method `handleError()` tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!**
 
-Perbedaan Langkah 1 dan Langkah 4:
--Langkah 1 menjalankan beberapa tugas async satu per satu.
--Langkah 4 menggunakan Future.wait agar semua tugas dijalankan bersamaan dan hasilnya diterima sekaligus. 
+**Jawaban:**
 
-GIF hasil running aplikasi:
+Ketika tombol GO! ditekan, jika proses berhasil maka muncul tulisan "Success". Kalau terjadi error, pesan error seperti "An error occurred" akan tampil, dan setelah itu "Complete" tetap dicetak di console. Artinya, aplikasi tetap aman dan selalu menandai proses sudah selesai.
+
+**Perbedaan Langkah 1 dan Langkah 4:**
+- **Langkah 1** menjalankan beberapa tugas async satu per satu.
+- **Langkah 4** menggunakan `Future.wait` agar semua tugas dijalankan bersamaan dan hasilnya diterima sekaligus.
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 5 soal 10](img/prak5S10.gif)
 
 ---
@@ -121,42 +150,65 @@ GIF hasil running aplikasi:
 ## Praktikum 6: Menggunakan Future dengan StatefulWidget
 
 ### Soal 11
-Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
-Jawaban: 
-![alt text](img/prak6S11.gif)
+**Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda**
+
+**Jawaban:**
+
+![GIF praktik 6 soal 11](img/prak6S11.gif)
 
 ### Soal 12
-Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));<br>
-jawaban: 
-GIF hasil running aplikasi:
+**Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method `getPosition()` dengan kode `await Future.delayed(const Duration(seconds: 3));`**
+
+**Jawaban:**
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 6 soal 12](img/prak612.gif)
-GIF setelah diberikan delay:
+
+**GIF setelah diberikan delay:**
+
 ![GIF praktik 6 soal 12 dengan delay](img/prak6s12_delayed.gif)
-Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
-jawaban: Tidak, karena browser tidak mengizinkan akses GPS secara langsung. Akses GPS biasanya memerlukan izin khusus yang hanya dapat diberikan pada aplikasi mobile atau melalui protokol HTTPS di browser.
+
+**Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?**
+
+**Jawaban:**
+
+Tidak, karena browser tidak mengizinkan akses GPS secara langsung. Akses GPS biasanya memerlukan izin khusus yang hanya dapat diberikan pada aplikasi mobile atau melalui protokol HTTPS di browser.
+
+---
 
 ## Praktikum 7: Manajemen Future dengan FutureBuilder
 
 ### Soal 13
-Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
-jawaban: Ya, ada perbedaan UI. Dengan menggunakan FutureBuilder, UI dapat menampilkan status loading secara otomatis saat menunggu Future selesai, serta menampilkan hasil atau error secara dinamis. Ini membuat UI lebih responsif dan mudah dikelola dibandingkan dengan pendekatan manual pada praktikum sebelumnya.
+**Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?**
 
-GIF hasil running aplikasi:
+**Jawaban:**
+
+Ya, ada perbedaan UI. Dengan menggunakan FutureBuilder, UI dapat menampilkan status loading secara otomatis saat menunggu Future selesai, serta menampilkan hasil atau error secara dinamis. Ini membuat UI lebih responsif dan mudah dikelola dibandingkan dengan pendekatan manual pada praktikum sebelumnya.
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 7 soal 13](img/prak7s13.gif)
 
 ### Soal 14
-Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
-jawaban: tidak ada perbedaan UI ketika tidak error, namun Perbedaan UI hanya terlihat saat terjadi error.
+**Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?**
 
-GIF hasil running aplikasi:
+**Jawaban:**
+
+Tidak ada perbedaan UI ketika tidak error, namun perbedaan UI hanya terlihat saat terjadi error.
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 7 soal 14](img/prak7s14.gif)
 
-## Praktikum 8: Navigation route dengan Future Function
+---
 
-### ### Soal 15
-Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
-Silakan ganti dengan warna tema favorit Anda.
-jawaban:
+## Praktikum 8: Navigation Route dengan Future Function
+
+### Soal 15
+**Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda. Silakan ganti dengan warna tema favorit Anda.**
+
+**Jawaban:**
 ```dart
 Text(
               'Navigation First Screen',
@@ -181,13 +233,43 @@ Text(
 ```
 
 ### Soal 16
-Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
-jawaban: ketika tombol ditekan, aplikasi menavigasi ke layar kedua dan menunggu hasil dari layar tersebut. Setelah kembali, hasilnya layar berubah menjadi warna yang dipilih dan ditampilkan di layar pertama. Ini terjadi karena penggunaan `Navigator.push` yang mengembalikan Future yang diselesaikan ketika layar kedua ditutup.
+**Cobalah klik setiap button, apa yang terjadi? Mengapa demikian?**
 
-GIF hasil running aplikasi:
+**Jawaban:**
+
+Ketika tombol ditekan, aplikasi menavigasi ke layar kedua dan menunggu hasil dari layar tersebut. Setelah kembali, hasilnya layar berubah menjadi warna yang dipilih dan ditampilkan di layar pertama. Ini terjadi karena penggunaan `Navigator.push` yang mengembalikan Future yang diselesaikan ketika layar kedua ditutup.
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 8 soal 16](img/prak8s16.gif)
 
-Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
-jawaban:
-GIF hasil running aplikasi:
+**Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!**
+
+**Jawaban:**
+
+**GIF hasil running aplikasi:**
+
 ![GIF praktik 8 soal 16 warna favorit](img/prak8s16_favcolor.gif)
+
+---
+
+## Praktikum 9: Memanfaatkan async/await dengan Widget Dialog
+
+### Soal 17
+**Cobalah klik setiap button, apa yang terjadi? Mengapa demikian?**
+
+**Jawaban:**
+
+Ketika tombol ditekan, dialog muncul menampilkan pilihan warna. Setelah memilih warna dan menekan OK, dialog menutup dan layar utama berubah warna sesuai pilihan. Ini terjadi karena penggunaan `showDialog` yang mengembalikan Future yang diselesaikan dengan nilai yang dipilih saat dialog ditutup.
+
+**GIF hasil running aplikasi:**
+
+![GIF praktik 9 soal 17](img/prak9s17.gif)
+
+**Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!**
+
+**Jawaban:**
+
+**GIF hasil running aplikasi:**
+
+![GIF praktik 9 soal 17 warna favorit](img/prak9s17_favcolor.gif)
