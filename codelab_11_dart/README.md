@@ -96,6 +96,8 @@ Jawaban:
 - Langkah 1: Membuat unit async sederhana (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) untuk mensimulasikan proses asynchronous terpisah, masing‑masing menunggu beberapa detik lalu mengembalikan angka.
 - Langkah 4: Mengganti atau menggabungkan pemanggilan menggunakan `Future.wait(...)` (atau alternatif seperti `FutureGroup`) sehingga beberapa Future dijalankan bersamaan dan hasilnya diproses setelah semuanya selesai. Perbedaan utama: langkah 1 fokus pada pembuatan task async tunggal, langkah 4 fokus pada pengelolaan dan sinkronisasi banyak task sekaligus.
 
+---
+
 ## Praktikum 5: Menangani Respon Error pada Async Code
 ### Soal 9
 Hasil running aplikasi:
@@ -103,4 +105,31 @@ Hasil running aplikasi:
 
 ### Soal 10
 Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4! <br>
+Jawaban: Ketika tombol GO! ditekan, jika proses berhasil maka muncul tulisan “Success”.
+Kalau terjadi error, pesan error seperti “An error occurred” akan tampil, dan setelah itu “Complete” tetap dicetak di console.
+Artinya, aplikasi tetap aman dan selalu menandai proses sudah selesai.
+
+Perbedaan Langkah 1 dan Langkah 4:
+-Langkah 1 menjalankan beberapa tugas async satu per satu.
+-Langkah 4 menggunakan Future.wait agar semua tugas dijalankan bersamaan dan hasilnya diterima sekaligus. 
+
+GIF hasil running aplikasi:
+![GIF praktik 5 soal 10](img/prak5S10.gif)
+
+---
+
+## Praktikum 6: Menggunakan Future dengan StatefulWidget
+
+### Soal 11
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
 Jawaban: 
+![alt text](img/prak6S11.gif)
+
+### Soal 12
+Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+jawaban: 
+GIF hasil running aplikasi:
+![GIF praktik 6 soal 12](img/prak6S12.gif)
+GIF setelah diberikan delay:
+![GIF praktik 6 soal 12 dengan delay](img/prak6S12_delay.gif)
+Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
