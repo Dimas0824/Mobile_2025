@@ -135,4 +135,12 @@ GIF setelah diberikan delay:
 Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
 jawaban: Tidak, karena browser tidak mengizinkan akses GPS secara langsung. Akses GPS biasanya memerlukan izin khusus yang hanya dapat diberikan pada aplikasi mobile atau melalui protokol HTTPS di browser.
 
+## Praktikum 7: Manajemen Future dengan FutureBuilder
+
+### Soal 13
+Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+jawaban: Ya, ada perbedaan UI. Dengan menggunakan FutureBuilder, UI dapat menampilkan status loading secara otomatis saat menunggu Future selesai, serta menampilkan hasil atau error secara dinamis. Ini membuat UI lebih responsif dan mudah dikelola dibandingkan dengan pendekatan manual pada praktikum sebelumnya.
+
+GIF hasil running aplikasi:
+![GIF praktik 7 soal 13](img/prak7s13.gif)
 

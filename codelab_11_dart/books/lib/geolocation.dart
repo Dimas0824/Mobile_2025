@@ -11,38 +11,36 @@ class LocationScreen extends StatefulWidget {
 class _LocationScreenState extends State<LocationScreen> {
   String myPosition = '';
   bool isLoading = true;
+  Future<Position>? position;
 
   @override
   void initState() {
     super.initState();
-    getPosition().then((Position myPos) {
-      setState(() {
-        myPosition =
-            'Latitude: ${myPos.latitude.toString()} - Longitude: ${myPos.longitude.toString()}';
-        isLoading = false;
-      });
-    });
+    position = getPosition();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Irsyad Dimas - Current Location')),
+      appBar: AppBar(title: const Text('Current Location - Dimas')),
       body: Center(
-        child: isLoading
-            ? Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  CircularProgressIndicator(),
-                  SizedBox(height: 20),
-                  Text('Getting your location...'),
-                ],
-              )
-            : Text(
-                myPosition,
-                textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 16),
-              ),
+        child: FutureBuilder<Position>(
+          future: position,
+          builder: (context, snapshot) {
+            switch (snapshot.connectionState) {
+              case ConnectionState.waiting:
+                return const CircularProgressIndicator();
+              case ConnectionState.done:
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Location not available');
+                }
+              default:
+                return const Text('Error fetching location');
+            }
+          },
+        ),
       ),
     );
   }
@@ -50,11 +48,9 @@ class _LocationScreenState extends State<LocationScreen> {
   Future<Position> getPosition() async {
     await Geolocator.requestPermission();
     await Geolocator.isLocationServiceEnabled();
-    Position position = await Geolocator.getCurrentPosition();
-
-    // Delay di akhir agar loading pasti terlihat minimal 3 detik
+    // Delay loading 3 detik
     await Future.delayed(const Duration(seconds: 3));
-
+    Position position = await Geolocator.getCurrentPosition();
     return position;
   }
 }
