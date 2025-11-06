@@ -144,3 +144,50 @@ jawaban: Ya, ada perbedaan UI. Dengan menggunakan FutureBuilder, UI dapat menamp
 GIF hasil running aplikasi:
 ![GIF praktik 7 soal 13](img/prak7s13.gif)
 
+### Soal 14
+Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+jawaban: tidak ada perbedaan UI ketika tidak error, namun Perbedaan UI hanya terlihat saat terjadi error.
+
+GIF hasil running aplikasi:
+![GIF praktik 7 soal 14](img/prak7s14.gif)
+
+## Praktikum 8: Navigation route dengan Future Function
+
+### ### Soal 15
+Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+Silakan ganti dengan warna tema favorit Anda.
+jawaban:
+```dart
+Text(
+              'Navigation First Screen',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.grey[900],
+                letterSpacing: -0.5,
+              ),
+            ),
+            const SizedBox(height: 2),
+            Text(
+              'Irsyad Dimas',
+              style: TextStyle(
+                fontSize: 13,
+                fontWeight: FontWeight.w400,
+                color: Colors.grey[500],
+                letterSpacing: 0.3,
+              ),
+            ),
+
+```
+
+### Soal 16
+Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+jawaban: ketika tombol ditekan, aplikasi menavigasi ke layar kedua dan menunggu hasil dari layar tersebut. Setelah kembali, hasilnya layar berubah menjadi warna yang dipilih dan ditampilkan di layar pertama. Ini terjadi karena penggunaan `Navigator.push` yang mengembalikan Future yang diselesaikan ketika layar kedua ditutup.
+
+GIF hasil running aplikasi:
+![GIF praktik 8 soal 16](img/prak8s16.gif)
+
+Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+jawaban:
+GIF hasil running aplikasi:
+![GIF praktik 8 soal 16 warna favorit](img/prak8s16_favcolor.gif)

@@ -27,17 +27,15 @@ class _LocationScreenState extends State<LocationScreen> {
         child: FutureBuilder<Position>(
           future: position,
           builder: (context, snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.waiting:
-                return const CircularProgressIndicator();
-              case ConnectionState.done:
-                if (snapshot.hasData) {
-                  return Text(snapshot.data.toString());
-                } else {
-                  return const Text('Location not available');
-                }
-              default:
-                return const Text('Error fetching location');
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const CircularProgressIndicator();
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              if (snapshot.hasError) {
+                return const Text('Something terrible happened!');
+              }
+              return Text(snapshot.data.toString());
+            } else {
+              return const Text('');
             }
           },
         ),
