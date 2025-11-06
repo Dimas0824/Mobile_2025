@@ -126,10 +126,13 @@ Jawaban:
 ![alt text](img/prak6S11.gif)
 
 ### Soal 12
-Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));<br>
 jawaban: 
 GIF hasil running aplikasi:
-![GIF praktik 6 soal 12](img/prak6S12.gif)
+![GIF praktik 6 soal 12](img/prak612.gif)
 GIF setelah diberikan delay:
-![GIF praktik 6 soal 12 dengan delay](img/prak6S12_delay.gif)
+![GIF praktik 6 soal 12 dengan delay](img/prak6s12_delayed.gif)
 Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+jawaban: Tidak, karena browser tidak mengizinkan akses GPS secara langsung. Akses GPS biasanya memerlukan izin khusus yang hanya dapat diberikan pada aplikasi mobile atau melalui protokol HTTPS di browser.
+
+
