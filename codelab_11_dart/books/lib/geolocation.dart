@@ -10,6 +10,7 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   String myPosition = '';
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -18,29 +19,42 @@ class _LocationScreenState extends State<LocationScreen> {
       setState(() {
         myPosition =
             'Latitude: ${myPos.latitude.toString()} - Longitude: ${myPos.longitude.toString()}';
+        isLoading = false;
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final myWidget = myPosition == ''
-        ? const CircularProgressIndicator()
-        : Text(myPosition);
-
     return Scaffold(
       appBar: AppBar(title: const Text('Irsyad Dimas - Current Location')),
-      body: Center(child: myWidget),
+      body: Center(
+        child: isLoading
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  CircularProgressIndicator(),
+                  SizedBox(height: 20),
+                  Text('Getting your location...'),
+                ],
+              )
+            : Text(
+                myPosition,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 16),
+              ),
+      ),
     );
   }
 
   Future<Position> getPosition() async {
-    // Tambahkan delay 3 detik agar loading terlihat
-    await Future.delayed(const Duration(seconds: 3));
-
     await Geolocator.requestPermission();
     await Geolocator.isLocationServiceEnabled();
     Position position = await Geolocator.getCurrentPosition();
+
+    // Delay di akhir agar loading pasti terlihat minimal 3 detik
+    await Future.delayed(const Duration(seconds: 3));
+
     return position;
   }
 }
