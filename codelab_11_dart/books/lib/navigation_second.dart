@@ -18,23 +18,32 @@ class _NavigationSecondState extends State<NavigationSecond> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
-              child: const Text('Red'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFB0BEC5), // Soft Gray
+              ),
+              child: const Text('Soft Gray'),
               onPressed: () {
-                color = Colors.red.shade700;
+                color = const Color(0xFFB0BEC5);
                 Navigator.pop(context, color);
               },
             ),
             ElevatedButton(
-              child: const Text('Green'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF90CAF9), // Light Blue
+              ),
+              child: const Text('Light Blue'),
               onPressed: () {
-                color = Colors.green.shade700;
+                color = const Color(0xFF90CAF9);
                 Navigator.pop(context, color);
               },
             ),
             ElevatedButton(
-              child: const Text('Blue'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFFA5D6A7), // Mint Green
+              ),
+              child: const Text('Mint Green'),
               onPressed: () {
-                color = Colors.blue.shade700;
+                color = const Color(0xFFA5D6A7);
                 Navigator.pop(context, color);
               },
             ),
