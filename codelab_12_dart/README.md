@@ -61,3 +61,14 @@ Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 **Jelaskan perbedaan menggunakan `listen` dan `await for` (langkah 9)!**  
 `await for` membaca stream secara berurutan dan menunggu hingga selesai, sedangkan `listen` menjalankan callback setiap data baru muncul tanpa menunggu stream berakhir.
 
+
+## Praktikum 2: Stream controllers dan sinks
+### Soal 6
+Jelaskan maksud kode langkah 8 dan 10 tersebut!
+jawaban:
+Langkah 8 menghubungkan stream ke UI sehingga setiap perubahan data pada stream langsung ditampilkan di aplikasi tanpa perlu refresh manual. Dengan begitu, angka terbaru yang dihasilkan akan otomatis muncul pada tampilan UI.
+
+Langkah 10 berfungsi untuk menghasilkan angka acak menggunakan fungsi tertentu, lalu angka tersebut dikirimkan ke stream melalui sink. Setiap kali angka baru dikirim, stream akan memberitahu UI untuk memperbarui tampilan dengan angka terbaru secara otomatis. Proses ini membuat aplikasi responsif terhadap perubahan data secara real-time.
+
+Hasil run GIF:
+![Hasil praktikum](img/p2s6.gif)
