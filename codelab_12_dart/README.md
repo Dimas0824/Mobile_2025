@@ -108,3 +108,19 @@ Langkah 3 (listen + onError): Stream yang sudah ditransformasi kemudian di-liste
 
 Hasil run GIF:
 ![alt text](img/msedge_WNG0j9KJKa.gif)
+
+## Praktikum 4: Subscribe ke stream events
+
+### Soal 9
+Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+Jawaban:
+Langkah 2: Kode tersebut membuat subscription ke stream agar setiap data baru yang masuk langsung diperbarui ke variabel lastNumber melalui setState. Dengan begitu, UI otomatis mengikuti perubahan nilai dari stream.
+Langkah 6: Kode ini membatalkan subscription ke stream. Setelah dipanggil, aplikasi tidak akan lagi menerima pembaruan data dari stream, sehingga nilai lastNumber tidak akan berubah lagi.
+Langkah 8: kode ini menjaga agar penambahan data ke stream tidak dilakukan saat controller sudah ditutup, sehingga lebih aman dan terkontrol.
+
+
+Output Debug Console:
+![alt text](img/Code_kbn2f6ZzLb.png)
+
+Hasil run GIF:
+![alt text](img/msedge_4SC3tBOmZO.gif)
