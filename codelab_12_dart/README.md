@@ -99,3 +99,12 @@ Hasil run GIF:
 
 ## Praktikum 3: Injeksi data ke streams
 
+### Soal 8
+Jelaskan maksud kode langkah 1-3 tersebut!
+Jawaban: 
+Langkah 1 melakukan inisialisasi variable late transformer yang bertipe StreamTransformer. Variable ini akan digunakan untuk mentransformasi data yang masuk ke dalam stream.
+Langkah 2 (transformer): Stream diberi transformer untuk memproses data sebelum masuk ke listener. Misalnya, setiap angka dikalikan 10, atau jika ada error langsung diganti dengan nilai tertentu.
+Langkah 3 (listen + onError): Stream yang sudah ditransformasi kemudian di-listen. Event normal akan mengubah lastNumber sesuai data, sedangkan error ditangani lewat onError dengan menetapkan nilai fallback (misalnya -1).
+
+Hasil run GIF:
+![alt text](img/msedge_WNG0j9KJKa.gif)
