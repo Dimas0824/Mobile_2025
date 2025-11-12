@@ -46,3 +46,9 @@ Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut. <
 jawaban: 
 ![alt text](<img/image copy.png>)
 
+### Soal 3
+Jelaskan fungsi keyword yield* pada kode tersebut!
+jawaban: yield* dalam kode tersebut digunakan untuk mengembalikan atau mengalirkan semua data dari stream ke stream utama yaitu getColors().
+
+Apa maksud isi perintah kode tersebut?
+jawaban:  Perintah kode tersebut membuat sebuah stream yang menghasilkan warna secara periodik setiap satu detik. Setiap kali timer berjalan, warna yang dihasilkan diambil dari daftar colors berdasarkan indeks yang dihitung dengan operasi modulo terhadap jumlah warna dalam daftar tersebut.

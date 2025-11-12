@@ -16,4 +16,17 @@ class ColorStream {
     Colors.grey.shade200,
     Colors.brown.shade100,
   ];
+
+  Stream<Color> getColors() async* {
+    // yield satu per satu dengan delay
+    for (var color in colors) {
+      await Future.delayed(const Duration(seconds: 1));
+      yield color;
+    }
+    // yield* dengan Stream.periodic
+    yield* Stream.periodic(const Duration(seconds: 1), (int t) {
+      int index = t % colors.length;
+      return colors[index];
+    });
+  }
 }
