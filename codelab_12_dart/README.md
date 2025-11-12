@@ -139,3 +139,15 @@ jawaban: karena kali ini kode yang awalnya hanya stream dan hanya dapat di-liste
 
 Hasil run GIF:
 ![alt text](img/msedge_REFhe79X3w.gif)
+
+## Praktikum 6: StreamBuilder
+### Soal 12 
+Jelaskan maksud kode pada langkah 3 dan 7 !
+Jawaban:
+Langkah 3: Kode ini membuat class NumberStream yang berfungsi sebagai pengelola stream angka. Didalamnya terdapat yield* yang mengalirkan angka acak setiap detik ke dalam stream. dengan variable myNum menghasilkan angka acak dari 0 hingga 9 setiap detik.
+
+Langkah 7: Kode ini menggunakan StreamBuilder untuk membangun UI berdasarkan data yang diterima dari stream. StreamBuilder mendengarkan stream numberStream dan memperbarui tampilan setiap kali ada data baru. Jika ada error, akan mencetak 'Error!' di konsol. Jika ada data, akan menampilkan data tersebut di tengah layar dengan ukuran font besar. Jika tidak ada data, akan menampilkan widget kosong.
+
+Hasil run GIF:
+![alt text](img/msedge_G4YS6OFzTM.gif)
+
