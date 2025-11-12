@@ -52,3 +52,7 @@ jawaban: yield* dalam kode tersebut digunakan untuk mengembalikan atau mengalirk
 
 Apa maksud isi perintah kode tersebut?
 jawaban:  Perintah kode tersebut membuat sebuah stream yang menghasilkan warna secara periodik setiap satu detik. Setiap kali timer berjalan, warna yang dihasilkan diambil dari daftar colors berdasarkan indeks yang dihitung dengan operasi modulo terhadap jumlah warna dalam daftar tersebut.
+
+### Soal 4
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+![alt text](img/p1s4.gif)
