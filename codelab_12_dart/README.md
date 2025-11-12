@@ -124,3 +124,18 @@ Output Debug Console:
 
 Hasil run GIF:
 ![alt text](img/msedge_4SC3tBOmZO.gif)
+
+
+## Praktikum 5: Multiple stream subscriptions
+### Soal 10
+Jelaskan mengapa error itu bisa terjadi ?
+jawaban: error bad state terjadi karena kode melakukan listenn pada stream yang sama lebih dari satu kali tanpa menggunakan broadcast. Stream biasa hanya mengizinkan satu listener, sehingga ketika listener kedua ditambahkan, akan muncul error bad state.
+
+![alt text](<img/image copy 2.png>)
+
+### Soal 11
+Jelaskan mengapa hal itu bisa terjadi ?
+jawaban: karena kali ini kode yang awalnya hanya stream dan hanya dapat di-listen sekali, diubah menjadi broadcast stream yang mengizinkan multiple listeners. Dengan broadcast, beberapa listener dapat berlangganan ke stream, sehingga ketika button add new number ditekan, maka keduanya akan mengembalikan nilai yang sama karena listen pada stream yang sama.
+
+Hasil run GIF:
+![alt text](img/msedge_REFhe79X3w.gif)
