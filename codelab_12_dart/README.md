@@ -84,7 +84,18 @@ Langkah 15: Mengubah fungsi addRandomNumber() agar memanggil addError()—bukan 
 
 Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
 jawaban:
+```dart
+  void addRandomNumber() {
+    Random random = Random();
+    int myNum = random.nextInt(10);
+    numberStream.addNumberToSink(myNum);
 
+    // numberStream.addError();
+  }
+```
 
 Hasil run GIF:
 ![alt text](img/msedge_oXRttsyQRt.gif)
+
+## Praktikum 3: Injeksi data ke streams
+
