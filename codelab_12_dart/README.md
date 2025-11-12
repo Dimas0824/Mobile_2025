@@ -72,3 +72,19 @@ Langkah 10 berfungsi untuk menghasilkan angka acak menggunakan fungsi tertentu, 
 
 Hasil run GIF:
 ![Hasil praktikum](img/p2s6.gif)
+
+### Soal 7
+Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+jawaban:
+Langkah 13: Menambahkan method addError() pada NumberStream untuk memasukkan error ke dalam stream sink.
+
+Langkah 14: Menambahkan parameter onError di method listen() agar aplikasi dapat menangani error yang diterima Stream, misalnya dengan menampilkan nilai 0.
+
+Langkah 15: Mengubah fungsi addRandomNumber() agar memanggil addError()—bukan menambah angka acak—sehingga proses error pada Stream dapat diuji secara langsung.
+
+Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
+jawaban:
+
+
+Hasil run GIF:
+![alt text](img/msedge_oXRttsyQRt.gif)
