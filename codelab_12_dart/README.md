@@ -36,7 +36,13 @@
 ## Praktikum 1: Dart Streams
 
 ### Soal 1
-Tambahan nama panggilan anda pada title app sebagai identitas hasil perkerjaan anda.
-Ganti warna tema app menjadi warna kesukaan anda.
+Tambahan nama panggilan anda pada title app sebagai identitas hasil perkerjaan anda. <br>
+Ganti warna tema app menjadi warna kesukaan anda. <br>
 jawaban: 
 ![alt text](img/image.png)
+
+### Soal 2
+Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut. <br>
+jawaban: 
+![alt text](<img/image copy.png>)
+
