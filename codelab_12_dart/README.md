@@ -40,7 +40,9 @@ Tambahkan nama panggilan Anda pada judul aplikasi sebagai identitas hasil pekerj
 
 **Jawaban:**
 
-![Tampilan aplikasi](img/image.png)
+<p align="center">
+  <img src="img/image.png" alt="Tampilan aplikasi" width="480">
+</p>
 
 ---
 
@@ -49,7 +51,9 @@ Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel `colors`.
 
 **Jawaban:**
 
-![Tampilan warna](img/image%20copy.png)
+<p align="center">
+  <img src="img/image%20copy.png" alt="Tampilan warna" width="480">
+</p>
 
 ---
 
@@ -71,7 +75,9 @@ Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
 
 **Jawaban:**
 
-![Hasil praktikum](img/p1s4.gif)
+<p align="center">
+  <img src="img/p1s4.gif" alt="Hasil praktikum" width="560">
+</p>
 
 ---
 
@@ -97,7 +103,9 @@ Jelaskan maksud kode langkah 8 dan 10 tersebut!
 
 **Hasil run GIF:**
 
-![Hasil praktikum](img/p2s6.gif)
+<p align="center">
+  <img src="img/p2s6.gif" alt="Hasil praktikum" width="560">
+</p>
 
 ---
 
@@ -126,7 +134,9 @@ void addRandomNumber() {
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_oXRttsyQRt.gif)
+<p align="center">
+  <img src="img/msedge_oXRttsyQRt.gif" alt="Hasil run" width="360">
+</p>
 
 ---
 
@@ -145,7 +155,9 @@ Jelaskan maksud kode langkah 1-3 tersebut!
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_WNG0j9KJKa.gif)
+<p align="center">
+  <img src="img/msedge_WNG0j9KJKa.gif" alt="Hasil run" width="360">
+</p>
 
 ---
 
@@ -164,11 +176,15 @@ Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
 
 **Output Debug Console:**
 
-![alt text](img/Code_kbn2f6ZzLb.png)
+<p align="center">
+  <img src="img/Code_kbn2f6ZzLb.png" alt="Output Debug Console" width="480">
+</p>
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_4SC3tBOmZO.gif)
+<p align="center">
+  <img src="img/msedge_4SC3tBOmZO.gif" alt="Hasil run" width="360">
+</p>
 
 ---
 
@@ -181,7 +197,9 @@ Jelaskan mengapa error itu bisa terjadi?
 
 Error bad state terjadi karena kode melakukan listen pada stream yang sama lebih dari satu kali tanpa menggunakan broadcast. Stream biasa hanya mengizinkan satu listener, sehingga ketika listener kedua ditambahkan, akan muncul error bad state.
 
-![alt text](<img/image copy 2.png>)
+<p align="center">
+  <img src="img/image copy 2.png" alt="Error bad state" width="480">
+</p>
 
 ---
 
@@ -194,7 +212,9 @@ Karena kali ini kode yang awalnya hanya stream biasa dan hanya dapat di-listen s
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_REFhe79X3w.gif)
+<p align="center">
+  <img src="img/msedge_REFhe79X3w.gif" alt="Hasil run" width="360">
+</p>
 
 ---
 
@@ -211,7 +231,9 @@ Jelaskan maksud kode pada langkah 3 dan 7!
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_G4YS6OFzTM.gif)
+<p align="center">
+  <img src="img/msedge_G4YS6OFzTM.gif" alt="Hasil run" width="360">
+</p>
 
 ---
 
@@ -232,4 +254,6 @@ Praktikum ini mengenalkan pola BLoC untuk memisahkan logika bisnis dari UI mengg
 
 **Hasil run GIF:**
 
-![alt text](img/msedge_N6tu3InqIF.gif)
+<p align="center">
+  <img src="img/msedge_N6tu3InqIF.gif" alt="Hasil run" width="360">
+</p>
