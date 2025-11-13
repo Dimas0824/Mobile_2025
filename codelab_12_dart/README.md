@@ -36,118 +36,200 @@
 ## Praktikum 1: Dart Streams
 
 ### Soal 1
-Tambahkan nama panggilan Anda pada judul aplikasi sebagai identitas hasil pekerjaan Anda.  
-Ganti warna tema aplikasi menjadi warna kesukaan Anda.  
-**Jawaban:**  
+Tambahkan nama panggilan Anda pada judul aplikasi sebagai identitas hasil pekerjaan Anda. Ganti warna tema aplikasi menjadi warna kesukaan Anda.
+
+**Jawaban:**
+
 ![Tampilan aplikasi](img/image.png)
 
+---
+
 ### Soal 2
-Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel `colors`.  
-**Jawaban:**  
+Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel `colors`.
+
+**Jawaban:**
+
 ![Tampilan warna](img/image%20copy.png)
 
+---
+
 ### Soal 3
-**Jelaskan fungsi keyword `yield*` pada kode tersebut!**  
+**Jelaskan fungsi keyword `yield*` pada kode tersebut!**
+
+**Jawaban:**
+
 `yield*` digunakan untuk mengalirkan seluruh data dari stream lain ke stream utama, yaitu `getColors()`.
 
-**Apa maksud isi perintah kode tersebut?**  
+**Apa maksud isi perintah kode tersebut?**
+
 Perintah tersebut membuat sebuah stream yang menghasilkan warna secara periodik setiap satu detik. Setiap kali timer berjalan, warna diambil dari daftar `colors` berdasarkan indeks yang dihitung dengan operasi modulo terhadap jumlah warna dalam daftar.
 
+---
+
 ### Soal 4
-Capture hasil praktikum Anda berupa GIF dan lampirkan di README.  
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+**Jawaban:**
+
 ![Hasil praktikum](img/p1s4.gif)
 
+---
+
 ### Soal 5
-**Jelaskan perbedaan menggunakan `listen` dan `await for` (langkah 9)!**  
+**Jelaskan perbedaan menggunakan `listen` dan `await for` (langkah 9)!**
+
+**Jawaban:**
+
 `await for` membaca stream secara berurutan dan menunggu hingga selesai, sedangkan `listen` menjalankan callback setiap data baru muncul tanpa menunggu stream berakhir.
 
+---
 
 ## Praktikum 2: Stream controllers dan sinks
+
 ### Soal 6
 Jelaskan maksud kode langkah 8 dan 10 tersebut!
-jawaban:
-Langkah 8 menghubungkan stream ke UI sehingga setiap perubahan data pada stream langsung ditampilkan di aplikasi tanpa perlu refresh manual. Dengan begitu, angka terbaru yang dihasilkan akan otomatis muncul pada tampilan UI.
 
-Langkah 10 berfungsi untuk menghasilkan angka acak menggunakan fungsi tertentu, lalu angka tersebut dikirimkan ke stream melalui sink. Setiap kali angka baru dikirim, stream akan memberitahu UI untuk memperbarui tampilan dengan angka terbaru secara otomatis. Proses ini membuat aplikasi responsif terhadap perubahan data secara real-time.
+**Jawaban:**
 
-Hasil run GIF:
+**Langkah 8:** Menghubungkan stream ke UI sehingga setiap perubahan data pada stream langsung ditampilkan di aplikasi tanpa perlu refresh manual. Dengan begitu, angka terbaru yang dihasilkan akan otomatis muncul pada tampilan UI.
+
+**Langkah 10:** Berfungsi untuk menghasilkan angka acak menggunakan fungsi tertentu, lalu angka tersebut dikirimkan ke stream melalui sink. Setiap kali angka baru dikirim, stream akan memberitahu UI untuk memperbarui tampilan dengan angka terbaru secara otomatis. Proses ini membuat aplikasi responsif terhadap perubahan data secara real-time.
+
+**Hasil run GIF:**
+
 ![Hasil praktikum](img/p2s6.gif)
+
+---
 
 ### Soal 7
 Jelaskan maksud kode langkah 13 sampai 15 tersebut!
-jawaban:
-Langkah 13: Menambahkan method addError() pada NumberStream untuk memasukkan error ke dalam stream sink.
 
-Langkah 14: Menambahkan parameter onError di method listen() agar aplikasi dapat menangani error yang diterima Stream, misalnya dengan menampilkan nilai 0.
+**Jawaban:**
 
-Langkah 15: Mengubah fungsi addRandomNumber() agar memanggil addError()—bukan menambah angka acak—sehingga proses error pada Stream dapat diuji secara langsung.
+- **Langkah 13:** Menambahkan method `addError()` pada `NumberStream` untuk memasukkan error ke dalam stream sink.
 
-Kembalikan kode seperti semula pada Langkah 15, comment addError() agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
-jawaban:
+- **Langkah 14:** Menambahkan parameter `onError` di method `listen()` agar aplikasi dapat menangani error yang diterima Stream, misalnya dengan menampilkan nilai 0.
+
+- **Langkah 15:** Mengubah fungsi `addRandomNumber()` agar memanggil `addError()`—bukan menambah angka acak—sehingga proses error pada Stream dapat diuji secara langsung.
+
+Kembalikan kode seperti semula pada Langkah 15, comment `addError()` agar Anda dapat melanjutkan ke praktikum 3 berikutnya.
+
 ```dart
-  void addRandomNumber() {
-    Random random = Random();
-    int myNum = random.nextInt(10);
-    numberStream.addNumberToSink(myNum);
+void addRandomNumber() {
+  Random random = Random();
+  int myNum = random.nextInt(10);
+  numberStream.addNumberToSink(myNum);
 
-    // numberStream.addError();
-  }
+  // numberStream.addError();
+}
 ```
 
-Hasil run GIF:
+**Hasil run GIF:**
+
 ![alt text](img/msedge_oXRttsyQRt.gif)
+
+---
 
 ## Praktikum 3: Injeksi data ke streams
 
 ### Soal 8
 Jelaskan maksud kode langkah 1-3 tersebut!
-Jawaban: 
-Langkah 1 melakukan inisialisasi variable late transformer yang bertipe StreamTransformer. Variable ini akan digunakan untuk mentransformasi data yang masuk ke dalam stream.
-Langkah 2 (transformer): Stream diberi transformer untuk memproses data sebelum masuk ke listener. Misalnya, setiap angka dikalikan 10, atau jika ada error langsung diganti dengan nilai tertentu.
-Langkah 3 (listen + onError): Stream yang sudah ditransformasi kemudian di-listen. Event normal akan mengubah lastNumber sesuai data, sedangkan error ditangani lewat onError dengan menetapkan nilai fallback (misalnya -1).
 
-Hasil run GIF:
+**Jawaban:**
+
+- **Langkah 1:** Melakukan inisialisasi variable `late transformer` yang bertipe `StreamTransformer`. Variable ini akan digunakan untuk mentransformasi data yang masuk ke dalam stream.
+
+- **Langkah 2 (transformer):** Stream diberi transformer untuk memproses data sebelum masuk ke listener. Misalnya, setiap angka dikalikan 10, atau jika ada error langsung diganti dengan nilai tertentu.
+
+- **Langkah 3 (listen + onError):** Stream yang sudah ditransformasi kemudian di-listen. Event normal akan mengubah `lastNumber` sesuai data, sedangkan error ditangani lewat `onError` dengan menetapkan nilai fallback (misalnya -1).
+
+**Hasil run GIF:**
+
 ![alt text](img/msedge_WNG0j9KJKa.gif)
+
+---
 
 ## Praktikum 4: Subscribe ke stream events
 
 ### Soal 9
 Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
-Jawaban:
-Langkah 2: Kode tersebut membuat subscription ke stream agar setiap data baru yang masuk langsung diperbarui ke variabel lastNumber melalui setState. Dengan begitu, UI otomatis mengikuti perubahan nilai dari stream.
-Langkah 6: Kode ini membatalkan subscription ke stream. Setelah dipanggil, aplikasi tidak akan lagi menerima pembaruan data dari stream, sehingga nilai lastNumber tidak akan berubah lagi.
-Langkah 8: kode ini menjaga agar penambahan data ke stream tidak dilakukan saat controller sudah ditutup, sehingga lebih aman dan terkontrol.
 
+**Jawaban:**
 
-Output Debug Console:
+- **Langkah 2:** Kode tersebut membuat subscription ke stream agar setiap data baru yang masuk langsung diperbarui ke variabel `lastNumber` melalui `setState`. Dengan begitu, UI otomatis mengikuti perubahan nilai dari stream.
+
+- **Langkah 6:** Kode ini membatalkan subscription ke stream. Setelah dipanggil, aplikasi tidak akan lagi menerima pembaruan data dari stream, sehingga nilai `lastNumber` tidak akan berubah lagi.
+
+- **Langkah 8:** Kode ini menjaga agar penambahan data ke stream tidak dilakukan saat controller sudah ditutup, sehingga lebih aman dan terkontrol.
+
+**Output Debug Console:**
+
 ![alt text](img/Code_kbn2f6ZzLb.png)
 
-Hasil run GIF:
+**Hasil run GIF:**
+
 ![alt text](img/msedge_4SC3tBOmZO.gif)
 
+---
 
 ## Praktikum 5: Multiple stream subscriptions
+
 ### Soal 10
-Jelaskan mengapa error itu bisa terjadi ?
-jawaban: error bad state terjadi karena kode melakukan listenn pada stream yang sama lebih dari satu kali tanpa menggunakan broadcast. Stream biasa hanya mengizinkan satu listener, sehingga ketika listener kedua ditambahkan, akan muncul error bad state.
+Jelaskan mengapa error itu bisa terjadi?
+
+**Jawaban:**
+
+Error bad state terjadi karena kode melakukan listen pada stream yang sama lebih dari satu kali tanpa menggunakan broadcast. Stream biasa hanya mengizinkan satu listener, sehingga ketika listener kedua ditambahkan, akan muncul error bad state.
 
 ![alt text](<img/image copy 2.png>)
 
-### Soal 11
-Jelaskan mengapa hal itu bisa terjadi ?
-jawaban: karena kali ini kode yang awalnya hanya stream dan hanya dapat di-listen sekali, diubah menjadi broadcast stream yang mengizinkan multiple listeners. Dengan broadcast, beberapa listener dapat berlangganan ke stream, sehingga ketika button add new number ditekan, maka keduanya akan mengembalikan nilai yang sama karena listen pada stream yang sama.
+---
 
-Hasil run GIF:
+### Soal 11
+Jelaskan mengapa hal itu bisa terjadi?
+
+**Jawaban:**
+
+Karena kali ini kode yang awalnya hanya stream biasa dan hanya dapat di-listen sekali, diubah menjadi broadcast stream yang mengizinkan multiple listeners. Dengan broadcast, beberapa listener dapat berlangganan ke stream yang sama, sehingga ketika button "Add New Number" ditekan, keduanya akan mengembalikan nilai yang sama karena listen pada stream yang sama.
+
+**Hasil run GIF:**
+
 ![alt text](img/msedge_REFhe79X3w.gif)
 
+---
+
 ## Praktikum 6: StreamBuilder
-### Soal 12 
-Jelaskan maksud kode pada langkah 3 dan 7 !
-Jawaban:
-Langkah 3: Kode ini membuat class NumberStream yang berfungsi sebagai pengelola stream angka. Didalamnya terdapat yield* yang mengalirkan angka acak setiap detik ke dalam stream. dengan variable myNum menghasilkan angka acak dari 0 hingga 9 setiap detik.
 
-Langkah 7: Kode ini menggunakan StreamBuilder untuk membangun UI berdasarkan data yang diterima dari stream. StreamBuilder mendengarkan stream numberStream dan memperbarui tampilan setiap kali ada data baru. Jika ada error, akan mencetak 'Error!' di konsol. Jika ada data, akan menampilkan data tersebut di tengah layar dengan ukuran font besar. Jika tidak ada data, akan menampilkan widget kosong.
+### Soal 12
+Jelaskan maksud kode pada langkah 3 dan 7!
 
-Hasil run GIF:
+**Jawaban:**
+
+- **Langkah 3:** Kode ini membuat class `NumberStream` yang berfungsi sebagai pengelola stream angka. Didalamnya terdapat `yield*` yang mengalirkan angka acak setiap detik ke dalam stream. Variable `myNum` menghasilkan angka acak dari 0 hingga 9 setiap detik.
+
+- **Langkah 7:** Kode ini menggunakan `StreamBuilder` untuk membangun UI berdasarkan data yang diterima dari stream. `StreamBuilder` mendengarkan stream `numberStream` dan memperbarui tampilan setiap kali ada data baru. Jika ada error, akan mencetak 'Error!' di konsol. Jika ada data, akan menampilkan data tersebut di tengah layar dengan ukuran font besar. Jika tidak ada data, akan menampilkan widget kosong.
+
+**Hasil run GIF:**
+
 ![alt text](img/msedge_G4YS6OFzTM.gif)
 
+---
+
+## Praktikum 7: BLoC Pattern
+
+### Soal 13
+Jelaskan maksud praktikum ini! Dimanakah letak konsep pola BLoC-nya?
+
+**Jawaban:**
+
+Praktikum ini mengenalkan pola BLoC untuk memisahkan logika bisnis dari UI menggunakan Stream. Logika pembuatan angka acak dipindahkan ke kelas `RandomNumberBloc` yang menerima event (permintaan angka) dan mengeluarkan state melalui stream. UI (`RandomScreen`) hanya mendengarkan stream dengan `StreamBuilder` dan menampilkan hasilnya.
+
+**Letak konsep pola BLoC:**
+- **Input (Sink):** `generateRandom` menerima event dari UI (tombol refresh)
+- **Business Logic:** Di dalam constructor, listener memproses event dan generate random number
+- **Output (Stream):** `randomNumber` mengirim data ke UI (StreamBuilder)
+- **Separation of Concerns:** Logic bisnis (generate random) terpisah dari UI
+
+**Hasil run GIF:**
+
+![alt text](img/msedge_N6tu3InqIF.gif)
