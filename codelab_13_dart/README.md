@@ -88,3 +88,15 @@ jawaban:
 
 #### Langkah 25
 ![alt text](img/image1.png)
+
+## Praktikum 2: Handle kompatibilitas data JSON
+
+#### Langkah 9
+![alt text](<img/image copy.png>)
+
+### Soal 4
+Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
+jawaban:
+![alt text](<img/image copy 2.png>)
+
+## 
