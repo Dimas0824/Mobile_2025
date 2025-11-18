@@ -109,8 +109,43 @@ Hasil capture layar aplikasi:
 ![alt text](<img/image copy 3.png>)
 
 ## Praktikum 4: SharedPreferences
-### Soal 6
-Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
-jawaban: di record tidak terlihat karena hanya merekam bagian browser saja, angka pada counter bertambah saat tombol restart app di klik, sedangkan jika refresh halaman counter akan tetap menampilkan nilai terakhir sebelum di refresh.
+di record tidak terlihat karena hanya merekam bagian browser saja, angka pada counter bertambah saat tombol restart app di klik, sedangkan jika refresh halaman counter akan tetap menampilkan nilai terakhir sebelum di refresh.
 
 ![alt text](img/chrome_LZKXGEQOAn.gif)
+
+### Soal 6
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+jawaban: 
+```dart
+@override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Shared Preferences - Dimas'),
+        backgroundColor: Colors.orange,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'You have opened the app $appCounter times.',
+              style: const TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                deletePreferece();
+              },
+              child: const Text('Reset counter'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+```
+Hasil capture layar aplikasi:
+![alt text](img/chrome_XGHAvfYhr5.gif)
+
+

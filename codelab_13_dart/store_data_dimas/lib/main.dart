@@ -56,12 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () async {
-                SharedPreferences prefs = await SharedPreferences.getInstance();
-                await prefs.setInt('appCounter', 0);
-                setState(() {
-                  appCounter = 0;
-                });
+              onPressed: () {
+                deletePreferece();
               },
               child: const Text('Reset counter'),
             ),
@@ -81,6 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       appCounter = count;
+    });
+  }
+
+  Future deletePreferece() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    setState(() {
+      appCounter = 0;
     });
   }
 
