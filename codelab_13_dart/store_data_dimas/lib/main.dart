@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './model/pizza.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
+import 'dart:io';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String documentsPath = '';
   String tempPath = '';
 
+  late File myFile;
+  String fileText = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Text('Doc path: $documentsPath'),
           Text('Temp path $tempPath'),
+
+          ElevatedButton(
+            child: const Text('Read File'),
+            onPressed: () => readFile(),
+          ),
+          Text(fileText),
         ],
       ),
     );
@@ -92,9 +102,37 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future<bool> writeFile() async {
+    try {
+      await myFile.writeAsString(
+        'Irsyad Dimas - 2341720088: Margherita, Capricciosa, Napoli',
+      );
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> readFile() async {
+    try {
+      // Read the file
+      String contents = await myFile.readAsString();
+      setState(() {
+        fileText = contents;
+      });
+      return true;
+    } catch (e) {
+      // On error, return false.
+      return false;
+    }
+  }
+
   @override
   void initState() {
+    getPaths().then((_) {
+      myFile = File('$documentsPath/pizza.txt');
+      writeFile();
+    });
     super.initState();
-    getPaths();
   }
 }

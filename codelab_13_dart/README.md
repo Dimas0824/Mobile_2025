@@ -154,3 +154,16 @@ Hasil capture layar aplikasi:
 Capture hasil praktikum Anda dan lampirkan di README.
 jawaban:
 ![alt text](<img/image copy 4.png>)
+
+## Praktikum 6: Akses filesystem dengan direktori
+### Soal 8
+Jelaskan maksud kode pada langkah 3 dan 7 !
+jawaban:
+Langkah 3 – Membuat Method writeFile()  
+Membuat method asinkron bernama `writeFile()` untuk menulis data ke file menggunakan `myFile.writeAsString()`. Data awal berupa "Margherita, Capricciosa, Napoli" diganti dengan Nama Lengkap dan NIM Anda agar file berisi identitas Anda.
+
+Langkah 7 – Menjalankan dan Menguji Aplikasi  
+Menjalankan aplikasi untuk memastikan proses penulisan dan pembacaan file berjalan baik. Saat tombol “Read File” ditekan, aplikasi membaca isi file yang telah ditulis dan menampilkan Nama dan NIM Anda di layar.
+Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+jawaban:
+![alt text](img/scrcpy_jG5CK15VAI.gif)
