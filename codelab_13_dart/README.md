@@ -148,4 +148,9 @@ jawaban:
 Hasil capture layar aplikasi:
 ![alt text](img/chrome_XGHAvfYhr5.gif)
 
+## Praktikum 5: Akses filesystem dengan path_provider
 
+### Soal 7
+Capture hasil praktikum Anda dan lampirkan di README.
+jawaban:
+![alt text](<img/image copy 4.png>)
