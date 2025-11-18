@@ -62,13 +62,19 @@ class _MyHomePageState extends State<MyHomePage> {
     String myString = await DefaultAssetBundle.of(
       context,
     ).loadString('assets/pizzalist.json');
-    List pizzaMapList = json.decode(myString);
+    List pizzaMapList = jsonDecode(myString);
     List<Pizza> myPizzas = [];
     for (var pizza in pizzaMapList) {
       Pizza myPizza = Pizza.fromJson(pizza);
       myPizzas.add(myPizza);
     }
+    String json = convertToJSON(myPizzas);
+    print(json);
     return myPizzas;
+  }
+
+  String convertToJSON(List<Pizza> pizzas) {
+    return jsonEncode(pizzas.map((pizza) => json.encode(pizza)).toList());
   }
 
   @override

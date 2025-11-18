@@ -86,3 +86,5 @@ Masukkan hasil capture layar ke laporan praktikum Anda. <br>
 jawaban:
 ![alt text](img/image.png)
 
+#### Langkah 25
+![alt text](img/image1.png)
