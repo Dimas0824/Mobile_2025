@@ -79,6 +79,8 @@ class MyApp extends StatelessWidget {
 ### Soal 2
 Masukkan hasil capture layar ke laporan praktikum Anda. <br>
 jawaban:
+![alt text](img/Code_qaPeK0P2fq.gif)
 
 ### Soal 3
 Masukkan hasil capture layar ke laporan praktikum Anda. <br>
+jawaban:
