@@ -84,3 +84,5 @@ jawaban:
 ### Soal 3
 Masukkan hasil capture layar ke laporan praktikum Anda. <br>
 jawaban:
+![alt text](img/image.png)
+
