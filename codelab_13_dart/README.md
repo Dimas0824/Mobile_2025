@@ -99,4 +99,11 @@ Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
 jawaban:
 ![alt text](<img/image copy 2.png>)
 
-## 
+## Praktikum 3: Menangani error JSON
+### Soal 5
+Jelaskan maksud kode lebih safe dan maintainable!
+jawaban:
+Kode yang lebih safe dan maintainable berarti kode tersebut dirancang untuk mengurangi risiko kesalahan (error) selama eksekusi dan memudahkan pemeliharaan di masa depan. Kode yang aman (safe) biasanya mencakup penanganan error yang baik, validasi input, dan penggunaan tipe data yang tepat untuk menghindari crash atau perilaku tak terduga. Kode yang mudah dipelihara (maintainable) berarti kode tersebut ditulis dengan cara yang jelas, terstruktur, dan terdokumentasi dengan baik, sehingga memudahkan pengembang lain (atau diri sendiri di masa depan) untuk memahami, memperbaiki, atau mengembangkan kode tersebut tanpa kesulitan.
+
+Hasil capture layar aplikasi:
+![alt text](<img/image copy 3.png>)
