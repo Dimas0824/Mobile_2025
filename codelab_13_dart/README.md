@@ -36,23 +36,27 @@
 ## Praktikum 1: Konversi Dart model ke JSON
 
 ### Soal 1
-Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda. <br>
-jawaban:
+
+**Pertanyaan:** Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda dan gantilah warna tema aplikasi sesuai kesukaan Anda.
+
+**Jawaban:**
+
+Menambahkan nama panggilan pada title aplikasi:
+
 ```dart
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Irsyad Dimas - Flutter JSON Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const MyHomePage(),
-    );
-  }
+// This widget is the root of your application.
+@override
+Widget build(BuildContext context) {
+  return MaterialApp(
+    title: 'Irsyad Dimas - Flutter JSON Demo',
+    theme: ThemeData(primarySwatch: Colors.blue),
+    home: const MyHomePage(),
+  );
 }
 ```
 
-Gantilah warna tema aplikasi sesuai kesukaan Anda. <br>
-jawaban:
+Mengganti warna tema aplikasi:
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -69,7 +73,6 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-
       home: const MyHomePage(),
     );
   }
@@ -77,93 +80,180 @@ class MyApp extends StatelessWidget {
 ```
 
 ### Soal 2
-Masukkan hasil capture layar ke laporan praktikum Anda. <br>
-jawaban:
-![alt text](img/Code_qaPeK0P2fq.gif)
+
+**Pertanyaan:** Masukkan hasil capture layar ke laporan praktikum Anda.
+
+**Jawaban:**
+
+<p align="center">
+  <img src="img/Code_qaPeK0P2fq.gif" width="300">
+</p>
 
 ### Soal 3
-Masukkan hasil capture layar ke laporan praktikum Anda. <br>
-jawaban:
-![alt text](img/image.png)
 
-#### Langkah 25
-![alt text](img/image1.png)
+**Pertanyaan:** Masukkan hasil capture layar ke laporan praktikum Anda.
+
+**Jawaban:**
+
+**Hasil Praktikum:**
+
+<p align="center">
+  <img src="img/image.png" width="700">
+</p>
+
+**Langkah 25:**
+
+<p align="center">
+  <img src="img/image1.png" width="700">
+</p>
+
+---
 
 ## Praktikum 2: Handle kompatibilitas data JSON
 
-#### Langkah 9
-![alt text](<img/image copy.png>)
+### Langkah 9
+
+<p align="center">
+  <img src="img/image copy.png" width="700">
+</p>
 
 ### Soal 4
-Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
-jawaban:
-![alt text](<img/image copy 2.png>)
+
+**Pertanyaan:** Capture hasil running aplikasi Anda, kemudian impor ke laporan praktikum Anda!
+
+**Jawaban:**
+
+<p align="center">
+  <img src="img/image copy 2.png" width="700">
+</p>
+
+---
 
 ## Praktikum 3: Menangani error JSON
-### Soal 5
-Jelaskan maksud kode lebih safe dan maintainable!
-jawaban:
-Kode yang lebih safe dan maintainable berarti kode tersebut dirancang untuk mengurangi risiko kesalahan (error) selama eksekusi dan memudahkan pemeliharaan di masa depan. Kode yang aman (safe) biasanya mencakup penanganan error yang baik, validasi input, dan penggunaan tipe data yang tepat untuk menghindari crash atau perilaku tak terduga. Kode yang mudah dipelihara (maintainable) berarti kode tersebut ditulis dengan cara yang jelas, terstruktur, dan terdokumentasi dengan baik, sehingga memudahkan pengembang lain (atau diri sendiri di masa depan) untuk memahami, memperbaiki, atau mengembangkan kode tersebut tanpa kesulitan.
 
-Hasil capture layar aplikasi:
-![alt text](<img/image copy 3.png>)
+### Soal 5
+
+**Pertanyaan:** Jelaskan maksud kode lebih safe dan maintainable!
+
+**Jawaban:**
+
+Kode yang lebih **safe** dan **maintainable** berarti kode tersebut dirancang untuk mengurangi risiko kesalahan (error) selama eksekusi dan memudahkan pemeliharaan di masa depan. 
+
+**Safe (Aman):**
+Kode yang aman biasanya mencakup penanganan error yang baik, validasi input, dan penggunaan tipe data yang tepat untuk menghindari crash atau perilaku tak terduga.
+
+**Maintainable (Mudah Dipelihara):**
+Kode yang mudah dipelihara berarti kode tersebut ditulis dengan cara yang jelas, terstruktur, dan terdokumentasi dengan baik, sehingga memudahkan pengembang lain (atau diri sendiri di masa depan) untuk memahami, memperbaiki, atau mengembangkan kode tersebut tanpa kesulitan.
+
+**Hasil capture layar aplikasi:**
+
+<p align="center">
+  <img src="img/image copy 3.png" width="700">
+</p>
+
+---
 
 ## Praktikum 4: SharedPreferences
-di record tidak terlihat karena hanya merekam bagian browser saja, angka pada counter bertambah saat tombol restart app di klik, sedangkan jika refresh halaman counter akan tetap menampilkan nilai terakhir sebelum di refresh.
 
-![alt text](img/chrome_LZKXGEQOAn.gif)
+**Keterangan:**
+Di recording tidak terlihat karena hanya merekam bagian browser saja. Angka pada counter bertambah saat tombol restart app diklik, sedangkan jika refresh halaman, counter akan tetap menampilkan nilai terakhir sebelum di-refresh.
+
+<p align="center">
+  <img src="img/chrome_LZKXGEQOAn.gif" width="300">
+</p>
 
 ### Soal 6
-Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
-jawaban: 
+
+**Pertanyaan:** Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+**Jawaban:**
+
 ```dart
 @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shared Preferences - Dimas'),
-        backgroundColor: Colors.orange,
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Shared Preferences - Dimas'),
+      backgroundColor: Colors.orange,
+    ),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'You have opened the app $appCounter times.',
+            style: const TextStyle(fontSize: 18),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {
+              deletePreferece();
+            },
+            child: const Text('Reset counter'),
+          ),
+        ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'You have opened the app $appCounter times.',
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                deletePreferece();
-              },
-              child: const Text('Reset counter'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+    ),
+  );
+}
 ```
-Hasil capture layar aplikasi:
-![alt text](img/chrome_XGHAvfYhr5.gif)
+
+**Hasil capture layar aplikasi:**
+
+<p align="center">
+  <img src="img/chrome_XGHAvfYhr5.gif" width="300">
+</p>
+
+---
 
 ## Praktikum 5: Akses filesystem dengan path_provider
 
 ### Soal 7
-Capture hasil praktikum Anda dan lampirkan di README.
-jawaban:
-![alt text](<img/image copy 4.png>)
+
+**Pertanyaan:** Capture hasil praktikum Anda dan lampirkan di README.
+
+**Jawaban:**
+
+<p align="center">
+  <img src="img/image copy 4.png" width="700">
+</p>
+
+---
 
 ## Praktikum 6: Akses filesystem dengan direktori
-### Soal 8
-Jelaskan maksud kode pada langkah 3 dan 7 !
-jawaban:
-Langkah 3 – Membuat Method writeFile()  
-Membuat method asinkron bernama `writeFile()` untuk menulis data ke file menggunakan `myFile.writeAsString()`. Data awal berupa "Margherita, Capricciosa, Napoli" diganti dengan Nama Lengkap dan NIM Anda agar file berisi identitas Anda.
 
-Langkah 7 – Menjalankan dan Menguji Aplikasi  
-Menjalankan aplikasi untuk memastikan proses penulisan dan pembacaan file berjalan baik. Saat tombol “Read File” ditekan, aplikasi membaca isi file yang telah ditulis dan menampilkan Nama dan NIM Anda di layar.
-Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
-jawaban:
-![alt text](img/scrcpy_jG5CK15VAI.gif)
+### Soal 8
+
+**Pertanyaan:** Jelaskan maksud kode pada langkah 3 dan 7!
+
+**Jawaban:**
+
+**Langkah 3 – Membuat Method writeFile()**
+
+Membuat method asinkron bernama `writeFile()` untuk menulis data ke file menggunakan `myFile.writeAsString()`. Data awal berupa "Margherita, Capricciosa, Napoli" diganti dengan Nama Lengkap dan NIM agar file berisi identitas mahasiswa.
+
+**Langkah 7 – Menjalankan dan Menguji Aplikasi**
+
+Menjalankan aplikasi untuk memastikan proses penulisan dan pembacaan file berjalan dengan baik. Saat tombol "Read File" ditekan, aplikasi membaca isi file yang telah ditulis dan menampilkan Nama dan NIM di layar.
+
+**Hasil capture layar aplikasi:**
+
+<p align="center">
+  <img src="img/scrcpy_jG5CK15VAI.gif" width="300">
+</p>
+
+---
+
+## Praktikum 7: Menyimpan data dengan enkripsi/dekripsi
+
+### Soal 9
+
+**Pertanyaan:** Capture hasil praktikum Anda berupa GIF dan lampirkan di README.
+
+**Jawaban:**
+
+<p align="center">
+  <img src="img/scrcpy_fQV3V1tccP.gif" width="300">
+</p>
+
+---

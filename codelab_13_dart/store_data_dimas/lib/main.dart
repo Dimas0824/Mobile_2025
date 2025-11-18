@@ -4,6 +4,7 @@ import './model/pizza.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
   late File myFile;
   String fileText = '';
 
+  final pwdController = TextEditingController();
+  String myPass = '';
+  final storage = const FlutterSecureStorage();
+  final myKey = 'myPass';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,18 +61,50 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Path Provider'),
         backgroundColor: Colors.blueGrey,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text('Doc path: $documentsPath'),
-          Text('Temp path $tempPath'),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 20),
 
-          ElevatedButton(
-            child: const Text('Read File'),
-            onPressed: () => readFile(),
-          ),
-          Text(fileText),
-        ],
+            TextField(
+              controller: pwdController,
+              decoration: const InputDecoration(
+                hintText: "Super Secret String!",
+                border: OutlineInputBorder(),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+            const Divider(thickness: 1),
+
+            const SizedBox(height: 10),
+
+            ElevatedButton(
+              child: const Text('Save Value'),
+              onPressed: writeToSecureStorage,
+            ),
+
+            const SizedBox(height: 10),
+
+            ElevatedButton(
+              child: const Text('Read Value'),
+              onPressed: () {
+                readFromSecureStorage().then((value) {
+                  setState(() {
+                    myPass = value ?? '';
+                  });
+                });
+              },
+            ),
+
+            const SizedBox(height: 20),
+
+            Text(myPass, style: const TextStyle(fontSize: 18)),
+          ],
+        ),
       ),
     );
   }
@@ -127,12 +165,17 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  Future<void> writeToSecureStorage() async {
+    await storage.write(key: myKey, value: pwdController.text);
+  }
+
+  Future<String?> readFromSecureStorage() async {
+    String secret = await storage.read(key: myKey) ?? '';
+    return secret;
+  }
+
   @override
   void initState() {
-    getPaths().then((_) {
-      myFile = File('$documentsPath/pizza.txt');
-      writeFile();
-    });
     super.initState();
   }
 }
