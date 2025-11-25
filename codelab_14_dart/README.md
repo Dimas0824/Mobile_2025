@@ -1,4 +1,4 @@
-# <p align="center">LAPORAN PRAKTIKUM PEMROGRAMAN MOBILE</p>
+# LAPORAN PRAKTIKUM PEMROGRAMAN MOBILE
 
 <br>
 
@@ -33,51 +33,55 @@
 
 ---
 
-## Praktikum 1: Membuat layanan Mock API
+## Praktikum 1: Membuat Layanan Mock API
 
 ### Soal 1
 
-Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
-Gantilah warna tema aplikasi sesuai kesukaan Anda.
-jawaban:
+**Tugas:**
+Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda. Gantilah warna tema aplikasi sesuai kesukaan Anda.
+
+**Jawaban:**
 
 ```dart
-      appBar: AppBar(
-        title: const Text('JSON - Irsyad Dimas'),
-        backgroundColor: Colors.blueGrey,
-      ),
+appBar: AppBar(
+  title: const Text('JSON - Irsyad Dimas'),
+  backgroundColor: Colors.blueGrey,
+),
 ```
 
-Hasil Run App:
-![alt text](img/image.png)
+**Hasil Eksekusi Aplikasi:**
+
+<img src="img/image.png" width="400">
+
+---
 
 ## Praktikum 2: Mengirim Data ke Web Service (POST)
 
 ### Soal 2
 
-Hasil Run App:
-![alt text](img/msedge_75triwFKXV.gif)
+**Tugas:**
+Tambahkan field baru dalam JSON maupun POST ke Wiremock.
 
-Tambahkan field baru dalam JSON maupun POST ke Wiremock!
-jawaban:
+**Jawaban:**
 
-Field baru di Wiremock:
-menambahkan field category pada body json
+Field baru ditambahkan pada konfigurasi Wiremock dengan menambahkan field `category` pada body JSON.
+
+**Konfigurasi Request Body:**
 
 ```json
-  { 
-    "id": 1, 
-    "pizzaName": "Margherita", 
-    "description": "Pizza with tomato, fresh mozzarella and basil",
-    "price": 8.75, 
-    "imageUrl": "images/margherita.png",
-    "category": "Vegetarian"
-  }
+{ 
+  "id": 1, 
+  "pizzaName": "Margherita", 
+  "description": "Pizza with tomato, fresh mozzarella and basil",
+  "price": 8.75, 
+  "imageUrl": "images/margherita.png",
+  "category": "Vegetarian"
+}
 ```
 
-![alt text](<img/image copy 2.png>)
+<img src="img/image copy 2.png" width="600">
 
-menambahkan response field pada response json
+**Konfigurasi Response Body:**
 
 ```json
 {
@@ -86,18 +90,79 @@ menambahkan response field pada response json
 }
 ```
 
-![alt text](<img/image copy 3.png>)
+<img src="img/image copy 3.png" width="600">
 
-Hasil Run App:
-![alt text](<img/image copy.png>)
+**Hasil Eksekusi Aplikasi:**
 
-GIF:
-![alt text](img/msedge_UsBJxSSO8n.gif)
+<img src="img/image copy.png" width="400">
+
+<img src="img/msedge_UsBJxSSO8n.gif" width="500">
+
+---
 
 ## Praktikum 3: Memperbarui Data di Web Service (PUT)
 
 ### Soal 3
 
+**Tugas:**
 Ubah salah satu data dengan Nama dan NIM Anda, lalu perhatikan hasilnya di Wiremock.
-jawaban:
-![alt text](img/msedge_0JPef9nNEX.gif)
+
+**Jawaban:**
+
+<img src="img/msedge_0JPef9nNEX.gif" width="500">
+
+**Hasil di Wiremock:**
+
+<img src="img/image copy 4.png" width="600">
+
+---
+
+## Praktikum 4: Menghapus Data dari Web Service (DELETE)
+
+### Soal 4
+
+**Implementasi Kode:**
+
+```dart
+return ListView.builder(
+  itemCount: pizzas.length,
+  itemBuilder: (BuildContext context, int position) {
+    final pizza = pizzas[position];
+    return Dismissible(
+      key: Key(position.toString()),
+      onDismissed: (item) {
+        HttpHelper helper = HttpHelper();
+        setState(() {
+          pizzas.removeAt(position);
+        });
+        helper.deletePizza(pizza.id!);
+      },
+      child: ListTile(
+        title: Text(pizza.pizzaName ?? 'No Name'),
+        subtitle: Text(
+          '${pizza.description ?? 'No Description'} - € ${pizza.price ?? 0.0}\nCategory: ${pizza.category ?? 'No Category'}',
+        ),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  PizzaDetailScreen(pizza: pizza, isNew: false),
+            ),
+          );
+        },
+      ),
+    );
+  },
+);
+```
+
+**Hasil Eksekusi Aplikasi:**
+
+<img src="img/msedge_8Y5J1u7I5y.gif" width="500">
+
+**Analisis:**
+
+Mengapa data yang sudah di-swipe dan dihapus muncul kembali setelah browser otomatis melakukan refresh? Hal ini terjadi karena WireMock tidak benar-benar menghapus data dari server, melainkan hanya menyembunyikannya pada response yang dikirimkan. Akibatnya, ketika aplikasi melakukan fetch ulang, data yang sebelumnya dihapus tetap tersimpan di server WireMock dan ditampilkan kembali di aplikasi.
+
+---

@@ -73,4 +73,12 @@ class HttpHelper {
     http.Response r = await http.put(url, body: put);
     return r.body;
   }
+
+  // method to delete a pizza
+  Future<String> deletePizza(int id) async {
+    const deletePath = '/pizza';
+    Uri url = Uri.https(authority, deletePath);
+    http.Response r = await http.delete(url);
+    return r.body;
+  }
 }
