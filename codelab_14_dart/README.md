@@ -93,3 +93,11 @@ Hasil Run App:
 
 GIF:
 ![alt text](img/msedge_UsBJxSSO8n.gif)
+
+## Praktikum 3: Memperbarui Data di Web Service (PUT)
+
+### Soal 3
+
+Ubah salah satu data dengan Nama dan NIM Anda, lalu perhatikan hasilnya di Wiremock.
+jawaban:
+![alt text](img/msedge_0JPef9nNEX.gif)
