@@ -4,8 +4,16 @@ import 'dart:convert';
 import 'pizza.dart';
 
 class HttpHelper {
+  static final HttpHelper _httpHelper = HttpHelper._internal();
+  HttpHelper._internal();
+  factory HttpHelper() {
+    return _httpHelper;
+  }
+
   final String authority = 'dk0j1.wiremockapi.cloud';
   final String path = 'pizzalist';
+
+  // method to get list of pizzas
   Future<List<Pizza>> getPizzaList() async {
     final Uri url = Uri.https(authority, path);
     final http.Response result = await http.get(url);
@@ -42,5 +50,18 @@ class HttpHelper {
     } else {
       return [];
     }
+  }
+
+  // method to post a pizza
+  Future<String> postPizza(Pizza pizza) async {
+    const postPath = '/pizza';
+    String post = json.encode(pizza.toJson());
+    Uri url = Uri.https(authority, postPath);
+    http.Response r = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: post,
+    );
+    return r.body;
   }
 }

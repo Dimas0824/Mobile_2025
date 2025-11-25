@@ -33,12 +33,13 @@
 
 ---
 
-## Praktikum 1: Konversi Dart model ke JSON
+## Praktikum 1: Membuat layanan Mock API
 
 ### Soal 1
 
 Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
 Gantilah warna tema aplikasi sesuai kesukaan Anda.
+jawaban:
 
 ```dart
       appBar: AppBar(
@@ -49,3 +50,46 @@ Gantilah warna tema aplikasi sesuai kesukaan Anda.
 
 Hasil Run App:
 ![alt text](img/image.png)
+
+## Praktikum 2: Mengirim Data ke Web Service (POST)
+
+### Soal 2
+
+Hasil Run App:
+![alt text](img/msedge_75triwFKXV.gif)
+
+Tambahkan field baru dalam JSON maupun POST ke Wiremock!
+jawaban:
+
+Field baru di Wiremock:
+menambahkan field category pada body json
+
+```json
+  { 
+    "id": 1, 
+    "pizzaName": "Margherita", 
+    "description": "Pizza with tomato, fresh mozzarella and basil",
+    "price": 8.75, 
+    "imageUrl": "images/margherita.png",
+    "category": "Vegetarian"
+  }
+```
+
+![alt text](<img/image copy 2.png>)
+
+menambahkan response field pada response json
+
+```json
+{
+  "message": "The pizza was posted",
+  "status": "success"
+}
+```
+
+![alt text](<img/image copy 3.png>)
+
+Hasil Run App:
+![alt text](<img/image copy.png>)
+
+GIF:
+![alt text](img/msedge_UsBJxSSO8n.gif)
